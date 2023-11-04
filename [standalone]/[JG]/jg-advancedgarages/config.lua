@@ -11,7 +11,7 @@ Config.CurrencySymbol = "£"
 
 -- Framework
 Config.Framework = "QBCore" -- or "ESX"
-Config.FuelSystem = "ti_fuel" -- or "ps-fuel", "lj-fuel", "ox_fuel", "cdn-fuel", "hyon_gas_station", "ti_fuel", "none"
+Config.FuelSystem = "cdn-fuel" -- or "ps-fuel", "lj-fuel", "ox_fuel", "cdn-fuel", "hyon_gas_station", "ti_fuel", "none"
 Config.VehicleKeys = "qb-vehiclekeys" -- or "jaksam-vehicles-keys", "none"
 Config.Notifications = "ox_lib" -- or "okokNotify", "ox_lib", "ps-ui"
 

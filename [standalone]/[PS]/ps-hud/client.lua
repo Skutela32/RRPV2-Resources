@@ -723,19 +723,6 @@ RegisterNetEvent('hud:client:EnhancementEffect', function(data)
     end
 end)
 
-RegisterCommand('+engine', function()
-    local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
-    if vehicle == 0 or GetPedInVehicleSeat(vehicle, -1) ~= PlayerPedId() then return end
-    if GetIsVehicleEngineRunning(vehicle) then
-        QBCore.Functions.Notify(Lang:t("notify.engine_off"))
-    else
-        QBCore.Functions.Notify(Lang:t("notify.engine_on"))
-    end
-    SetVehicleEngineOn(vehicle, not GetIsVehicleEngineRunning(vehicle), false, true)
-end)
-
-RegisterKeyMapping('+engine', Lang:t('info.toggle_engine'), 'keyboard', 'G')
-
 local function IsWhitelistedWeaponArmed(weapon)
     if weapon then
         for _, v in pairs(config.WhitelistedWeaponArmed) do
