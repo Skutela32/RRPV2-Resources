@@ -48,59 +48,44 @@ Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 Config.GaragePedModel = "s_m_y_hwaycop_01"
 Config.Locations = {
     ["duty"] = {
-        [1] = vector3(441.85, -981.95, 31.88), -- LSPD
-        [2] = vector3(-447.73, 6015.58, 32.28), -- BCSO
-        [3] = vector3(1832.68, 3678.4, 34.28), -- Sandy
+        [1] = vector3(441.85, -981.95, 0.88), -- LSPD
     },
     ["vehicle"] = {
         [1] = vector4(442.1, -1013.92, 0.63, 184.47), -- LSPD
-        [2] = vector4(-458.86, 6031.5, 31.34, 139.15), --BCSO
-        [3] = vector4(1858.95, 3681.95, 33.83, 219.83), -- Sandy
     },
     ["vehspawn"] = { -- The numbers [1] must match the numbers in [vehicle]
         [1] = vector4(442.4, -1025.02, 0.29, 4.11), -- LSPD
-        [2] = vector4(-474.63, 6030.38, 30.95, 226.12), -- BCSO
-        [3] = vector4(1850.89, 3673.04, 33.37, 211.26), -- Sandy
     },
     ["stash"] = {
-        [1] = vector3(461.13, -995.88, 30.69), -- LSPD
-        [2] = vector3(-438.73, 6008.25, 36.99), -- BCSO
-        [3] = vector3(1837.89, 3688.08, 34.19), -- Sandy
+        [1] = vector3(461.13, -995.88, 0.69), -- LSPD
     },
     ["impound"] = {
         [1] = vector3(479.08, -1022.54, 00.01),
         [2] = vector3(1822.14, 3689.16, 00.97),
     },
     ["helicopter"] = {
-        [1] = vector4(460.24, -980.18, 43.69, 181.43), -- LSPD
-        [2] = vector4(-462.15, 5994.77, 31.25, 134.84), -- BCSO
+        [1] = vector4(460.24, -980.18, 0.69, 181.43), -- LSPD
     },
     ["helispawn"] = { -- The numbers [1] must match the numbers in [helicopter]
-        [1] = vector4(449.16, -981.23, 43.69, 165.79), -- LSPD
-        [2] = vector4(-475.18, 5988.43, 31.72, 317.27), -- BCSO
+        [1] = vector4(449.16, -981.23, 0.69, 165.79), -- LSPD
     },
     ["armory"] = {
-        [1] = vector3(482.51, -995.62, 30.69), -- LSPD
-        [2] = vector3(-444.12, 6013.53, 37.00), -- BCSO
-        [3] = vector3(1836.2, 3687.01, 34.19), -- Sandy
+        [1] = vector3(365.53, -1609.47, 29.29), -- LSPD
     },
     ["trash"] = {
-        [1] = vector3(440.15, -978.25, 30.66), -- LSPD
+        [1] = vector3(440.15, -978.25, 0.66), -- LSPD
     },
     ["fingerprint"] = {
-        [1] = vector3(473.12, -1007.48, 26.27), -- LSPD
-        [2] = vector3(-452.22, 5997.96, 27.58), --BCSO
+        [1] = vector3(360.59, -1613.33, 29.29), -- LSPD
     },
     ["evidence"] = {
-        [1] = vector3(472.79, -993.10, 26.27), -- LSPD
-        [2] = vector3(-452.87, 5999.38, 37.00), -- BCSO
-        [3] = vector3(1817.97, 3672.25, 34.2), -- Sandy
+        [1] = vector3(381.63, -1599.46, 33.36), -- LSPD
     },
     ["labs"] = {
-        [1] = vector3(483.49, -988.62, 31.06), -- LSPD
+        [1] = vector3(483.49, -988.62, 0.06), -- LSPD
     },
     ["stations"] = {
-        [1] = {label = "Los Santos Police Department", coords = vector4(428.23, -984.28, 29.76, 3.5), sprite= 137, scale= 0.7, colour= 29},
+        [1] = {label = "Los Santos Police Department", coords = vector4(376.04, -1618.48, 29.29, 100.00), sprite= 137, scale= 0.7, colour= 29},
     },
 }
 
@@ -187,27 +172,14 @@ Config.AuthorizedVehicles = {
     -- Garage 1 vehicles (LSPD)
     [1] = {
         ["police"] = {label = "Police Car 1", ranks = {1,2}, livery = 1, price = 10},
-        ["police2"] = {label = "Police Car 2", ranks = {1,2}, livery = 1, price = 10},
-        ["police3"] = {label = "Police Car 3", ranks = {3}, livery = 1, price = 10},
-        ["police4"] = {label = "Police Car 4", ranks = {3}, livery = 1, price = 10},
-        ["policeb"] = {label = "Police Car 5", ranks = {3,4}, livery = 1, price = 10},
-        ["policet"] = {label = "Police Car 6", ranks = {3,4}, livery = 1, price = nil},
-        ["fbi"] = {label = "Unmarked FBI", ranks = {3,4}, livery = 1, price = 15},
-        ["fbi2"] = {label = "Unmarked FBI2", ranks = {3,4}, livery = 1, price = nil},
     },
     -- Garage 2 vehicles (BCSO)
     [2] = {
         ["sheriff"] = {label = "Sheriff Car 1", ranks = {1,2}, livery = 1, price = 10},
-        ["sheriff2"] = {label = "Sheriff Car 2", ranks = {2,3,4}, livery = 1, price = 10},
-        ["fbi"] = {label = "Unmarked FBI", ranks = {3,4}, livery = 1, price = 10},
-        ["fbi2"] = {label = "Unmarked FBI2", ranks = {3,4}, livery = 1, price = nil},
     },
     -- Garage 1 vehicles (Sandy)
     [3] = {
         ["sheriff"] = {label = "Sheriff Car 1", ranks = {1,2}, livery = 1, price = 10},
-        ["sheriff2"] = {label = "Sheriff Car 2", ranks = {2,3,4}, livery = 1, price = 10},
-        ["fbi"] = {label = "Unmarked FBI", ranks = {3,4}, livery = 1, price = 10},
-        ["fbi2"] = {label = "Unmarked FBI2", ranks = {3,4}, livery = 1, price = nil},
     },
 }
 

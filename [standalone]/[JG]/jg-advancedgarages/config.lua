@@ -181,17 +181,6 @@ Config.GarageLocations = { -- IMPORTANT - Every garage name must be unique
       scale = 0.6
     },
   },
-  ['Hangar'] = {
-    coords = vector3(-1243.49, -3391.88, 13.94),
-    spawn = vector4(-1258.4, -3394.56, 13.94, 328.23),
-    distance = 20,
-    type = "air",
-    blip = {
-      id = 423,
-      color = 0,
-      scale = 0.6
-    },
-  }
 }
 
 -- Private Garages
@@ -218,8 +207,8 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
     vehiclesType = "owned", -- Use owned vehicles that can anyone in this society can access - more details: https://docs.jgscripts.com/advanced-garages/job-and-gang-garages
   },
   ['Police'] = {
-    coords = vector3(434.48, -1016.97, 28.83),
-    spawn = vector4(434.55, -1014.54, 28.49, 91.56),
+    coords = vector3(393.97, -1617.33, 29.29),
+    spawn = {vector4(392.78, -1608.09, 28.62, 229.25), vector4(390.75, -1610.42, 28.62, 230.96), vector4(400.89, -1619.13, 28.62, 51.49), vector4(399.22, -1621.39, 28.62, 221.25)}
     distance = 15,
     job = "police",
     type = "car",
