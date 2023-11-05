@@ -3,9 +3,9 @@ Config = {
 	System = {
 		Debug = false, -- Set to true to show green debug boxes to help track any issues
 
-		img = "ox-inventory/web/images", 	-- Set this to the directory for your inventory image files
+		img = "lj-inventory/html/images", 	-- Set this to the directory for your inventory image files
 											-- "ox_inventory/web/images/", "qb-inventory/html/images", "lj-inventory/html/images"
-		Inv = "ox",  				-- "qb", "ox", "qs"
+		Inv = "lj",  				-- "qb", "ox", "qs"
 		Menu = "ox",  				-- "qb", "ox"
 		Notify = "ox",				-- "qb", "ox"
 		ProgressBar = "ox", 		-- "qb", "ox"

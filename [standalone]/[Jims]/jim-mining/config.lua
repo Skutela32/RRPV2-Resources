@@ -4,13 +4,13 @@ Loc = {}
 
 Config = {
 	Debug = false, -- enable debug mode
-	img = "ox-inventory/web/images", --Set this to the image directory of your inventory script or "nil" if using newer qb-menu
+	img = "lj-inventory/html/images", --Set this to the image directory of your inventory script or "nil" if using newer qb-menu
 
 	Lan = "en", -- Pick your language here
 
 	JimShops = false, 		-- Set this to true if using jim-shops
 
-	Inv = "ox",				--"qb" or "ox"
+	Inv = "lj",				--"qb" or "ox"
 	Menu = "ox",			--"qb" or "ox"
 	ProgressBar = "ox",		--"qb" or "ox"
 	Notify = "ox",			--"qb" or "ox"

@@ -4,9 +4,9 @@ Config = {
 	Debug = false, -- Toggle Debug Mode
 	Lan = "en",
 
-	img = "ox-inventory/web/images", -- Set this to your inventory
+	img = "lj-inventory/html/images", -- Set this to your inventory
 
-	Inv = "ox", -- set to "ox" if using OX Inventory
+	Inv = "lj", -- set to "ox" if using OX Inventory
 	Menu = "ox",
 	ProgressBar = "ox",
 	Notify = "ox",
