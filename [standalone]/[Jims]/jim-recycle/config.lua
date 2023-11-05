@@ -6,7 +6,7 @@ Config = {
 
 	img = "lj-inventory/html/images", -- Set this to your inventory
 
-	Inv = "lj", -- set to "ox" if using OX Inventory
+	Inv = "qb", -- set to "ox" if using OX Inventory
 	Menu = "ox",
 	ProgressBar = "ox",
 	Notify = "ox",
