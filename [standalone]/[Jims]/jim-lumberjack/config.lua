@@ -1,12 +1,12 @@
 Config = {
 	Debug = false, -- enable debug mode
-	img = "lj-inventory/html/images", -- Change this to your inventory's name and image folder
+	img = "qb-inventory/html/images", -- Change this to your inventory's name and image folder
 
 	Blips = true, -- Enable Blips?
 
 	Lan = "en", -- Pick your language here
 
-	Inv = "lj", -- set to "ox" if using OX Inventory
+	Inv = "qb", -- set to "ox" if using OX Inventory
 	Menu = "ox",
 	Notify = "ox",
 	ProgressBar = "ox",
