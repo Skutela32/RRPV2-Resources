@@ -84,17 +84,8 @@ $(document).ready(function (){
                             }, 1000);
                             
                         });
-                        $(".btn-iniciar").mouseenter(function() {
-                            over_button.play();
-                        });
-                        $("#play, .btn-iniciar").click(function() {
-                            confirmar.play();
-                        });
                     }, 2000);
                 }, 2000);
-                background.volume = 0.3;
-                background.currentTime = 0
-                background.play();
             } else {
                 $('.container').fadeOut(250);
                 qbMultiCharacters.resetAll();
@@ -127,7 +118,6 @@ $('.disconnect-btn').click(function(e){
 });
 
 $(".btn-iniciar").on("click", function() {
-    background.volume = 0.3;
         $(".title-screen").fadeOut(300, function() {
             qbMultiCharacters.fadeInDown('.character-info', '20%', 400);
             qbMultiCharacters.fadeInDown('.characters-list', '20%', 400);
