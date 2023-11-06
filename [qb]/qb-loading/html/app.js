@@ -5,17 +5,19 @@ const { ref } = Vue
 const load = Vue.createApp({
   setup () {
     return {
-      CarouselText1: 'You can add/remove items, vehicles, jobs & gangs through the shared folder.',
-      CarouselSubText1: 'Photo captured by: Markyoo#8068',
-      CarouselText2: 'Adding additional player data can be achieved by modifying the qb-core player.lua file.',
-      CarouselSubText2: 'Photo captured by: ihyajb#9723',
-      CarouselText3: 'All server-specific adjustments can be made in the config.lua files throughout the build.',
-      CarouselSubText3: 'Photo captured by: FLAPZ[INACTIV]#9925',
-      CarouselText4: 'For additional support please join our community at discord.gg/qbcore',
-      CarouselSubText4: 'Photo captured by: Robinerino#1312',
+      CarouselText1: 'Want to join our discord? discord.gg/Mw8ss32p3r',
+      CarouselSubText1: 'Photo captured by: Luke',
+      CarouselText2: 'Struggling to start? either do /guidebook or check your inventory with Button "TAB"',
+      CarouselSubText2: 'Photo captured by: skutela12',
+      CarouselText3: 'Want a place to call home? look no further!',
+      CarouselSubText3: 'Photo captured by: gmartinez',
+      CarouselText4: 'We are always looking for people to join our Whitelisted Jobs!',
+      CarouselSubText4: 'Photo captured by: Pieces',
+      CarouselText5: 'Please check the server rules through our discord before playing! discord.gg/Mw8ss32p3r',
+      CarouselSubText5: 'Photo captured by: Luke',
 
-      DownloadTitle: 'Downloading QBCore Server',
-      DownloadDesc: "Hold tight while we begin downloading all the resources/assets required to play on QBCore Server. \n\nAfter download has been finished successfully, you'll be placed into the server and this screen will disappear. Please don't leave or turn off your PC. ",
+      DownloadTitle: 'Initializing Real Roleplay UK',
+      DownloadDesc: "Hold tight while we begin downloading all the resources/assets required to play on Real Roleplay UK. \n\nIf you require any suppot please join our discord! discord.gg/Mw8ss32p3r ",
 
       SettingsTitle: 'Settings',
       AudioTrackDesc1: 'When disabled the current audio-track playing will be stopped.',
@@ -58,16 +60,57 @@ load.use(Quasar, { config: {} })
 load.mount('#loading-main')
 
 var audio = document.getElementById("audio");
-audio.volume = 0.05;
 
 function audiotoggle() {
-    var audio = document.getElementById("audio");
-    if (audio.paused) {
-        audio.play();
-    } else {
-        audio.pause();
+    if (currentAudio) {
+        if (audioPaused) {
+            // If audio is paused, resume playback
+            currentAudio.play();
+            audioPaused = false;
+        } else {
+            // If audio is playing, pause it
+            currentAudio.pause();
+            audioPaused = true;
+        }
     }
 }
+
+
+// Your existing Vue.js setup and other code
+
+
+const songs = [
+    '/assets/audio/song1.mp3',
+    '/assets/audio/song2.mp3',
+    '/assets/audio/song3.mp3',
+    '/assets/audio/song4.mp3',
+    '/assets/audio/song5.mp3',
+    // Add more song URLs here
+];
+
+let currentAudio = null;
+let audioPaused = false; // Variable to track if audio is paused
+
+function playRandomSong() {
+    if (currentAudio) {
+        currentAudio.pause();
+    }
+
+    const randomIndex = Math.floor(Math.random() * songs.length);
+    const newAudio = new Audio(songs[randomIndex]);
+    newAudio.volume = 0.5;
+    newAudio.play();
+
+    currentAudio = newAudio;
+    audioPaused = false; // Reset the audioPaused variable
+}
+
+
+playRandomSong();
+
+  
+  
+
 
 function videotoggle() {
     var video = document.getElementById("video");
