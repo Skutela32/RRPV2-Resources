@@ -577,6 +577,26 @@ local Vehicles = {
 	{['model'] = 'stratum',       ['name'] = 'Stratum',                       ['brand'] = 'Zirconium',       ['price'] = 15000,   ['category'] = 'Zirconium', 	['categoryLabel'] = 'Zirconium',       ['shop'] = 'pdm'},
     {['model'] = 'journey',       ['name'] = 'Journey',                       ['brand'] = 'Zirconium',       ['price'] = 6500,    ['category'] = 'Zirconium', 	['categoryLabel'] = 'Zirconium',       ['shop'] = 'pdm'},
     
+    -- 
+    -- POLICE
+    -- 
+    {['model'] = 'lspd10char',    ['name'] = 'lspd10char',                    ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
+    {['model'] = 'lspd14char',    ['name'] = 'lspd14char',                    ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
+    {['model'] = 'lspd15exp',     ['name'] = 'lspd15exp',                     ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
+    {['model'] = 'lspd16exp',     ['name'] = 'lspd16exp',                     ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
+    {['model'] = 'lspd18char',    ['name'] = 'lspd18char',                    ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
+    {['model'] = 'lspd18tahoe',   ['name'] = 'lspd18tahoe',                   ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
+    {['model'] = 'lspd20exp',     ['name'] = 'lspd20exp',                     ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
+    {['model'] = 'lspd21f150',    ['name'] = 'lspd21f150',                    ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
+    {['model'] = 'lspdcap',       ['name'] = 'lspdcap',                       ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
+    {['model'] = 'lspddur',       ['name'] = 'lspddur',                       ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
+    {['model'] = 'lspdram',       ['name'] = 'lspdram',                       ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
+    {['model'] = 'lspdtaur',      ['name'] = 'lspdtaur',                      ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
+    {['model'] = 'lspdvet',       ['name'] = 'lspdvet',                       ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
+    {['model'] = 'lspdvic',       ['name'] = 'lspdvic',                       ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
+    
+
+
 	--
 	-- Dono Vehicles
 	--
