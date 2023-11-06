@@ -1,7 +1,7 @@
 Config = {}
 
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add `setr UseTarget true` to use this and just that from true to false or the other way around)
-Config.PauseMapText = '' -- Text shown above the map when ESC is pressed. If left empty 'FiveM' will appear
+Config.PauseMapText = 'Real Roleplay' -- Text shown above the map when ESC is pressed. If left empty 'FiveM' will appear
 Config.HarnessUses = 20
 Config.DamageNeeded = 100.0 -- amount of damage till you can push your vehicle. 0-1000
 
@@ -49,23 +49,23 @@ Config.AIResponse = {
 
 -- To Set This Up visit https://forum.cfx.re/t/how-to-updated-discord-rich-presence-custom-image/157686
 Config.Discord = {
-    isEnabled = false, -- If set to true, then discord rich presence will be enabled
-    applicationId = '00000000000000000', -- The discord application id
-    iconLarge = 'logo_name', -- The name of the large icon
-    iconLargeHoverText = 'This is a Large icon with text', -- The hover text of the large icon
-    iconSmall = 'small_logo_name', -- The name of the small icon
-    iconSmallHoverText = 'This is a Small icon with text', -- The hover text of the small icon
+    isEnabled = true, -- If set to true, then discord rich presence will be enabled
+    applicationId = '1089241317613252708', -- The discord application id
+    iconLarge = 'lrrp_large', -- The name of the large icon
+    iconLargeHoverText = 'Real Roleplay', -- The hover text of the large icon
+    iconSmall = 'realrp', -- The name of the small icon
+    iconSmallHoverText = 'Real Roleplay', -- The hover text of the small icon
     updateRate = 60000, -- How often the player count should be updated
     showPlayerCount = true, -- If set to true the player count will be displayed in the rich presence
-    maxPlayers = 48, -- Maximum amount of players
+    maxPlayers = 64, -- Maximum amount of players
     buttons = {
         {
-            text = 'First Button!',
-            url = 'fivem://connect/localhost:30120'
+            text = 'Join',
+            url = 'https://cfx.re/join/6qr9j6'
         },
         {
-            text = 'Second Button!',
-            url = 'fivem://connect/localhost:30120'
+            text = 'Discord',
+            url = 'https://discord.gg/ugyn8TpUjv'
         }
     }
 }
@@ -261,12 +261,12 @@ Config.Teleports = {
     },
     [2] = { --Coke Processing Enter/Exit
         [1] = {
-            poly = {coords = vector3(909.49, -1589.22, 30.51), heading = 92.24, length = 2, width = 2},
+            poly = {coords = vector3(909.49, -1589.22, 3.51), heading = 92.24, length = 2, width = 2},
             allowVeh = false,
             label = '[E] Enter Coke Processing'
         },
         [2] = {
-            poly = {coords = vector3(1088.81, -3187.57, -38.99), heading = 181.7, length = 2, width = 2},
+            poly = {coords = vector3(1088.81, -3187.57, -3.99), heading = 181.7, length = 2, width = 2},
             allowVeh = false,
             label = '[E] Leave'
         }
@@ -275,7 +275,7 @@ Config.Teleports = {
 
 Config.CarWash = {
     dirtLevel = 0.1, -- threshold for the dirt level to be counted as dirty
-    defaultPrice = 20, -- default price for the carwash
+    defaultPrice = 200, -- default price for the carwash
     locations = {
         [1] = {coords = vector3(174.81, -1736.77, 28.87), length = 7.0, width = 8.8, heading = 359}, -- South Los Santos Carson Avenue
         [2] = {coords = vector3(25.2, -1391.98, 28.91), length = 6.6, width = 8.2, heading = 0}, -- South Los Santos Innocence Boulevard
