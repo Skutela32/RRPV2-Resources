@@ -1,298 +1,262 @@
-// Generating slides
-var arrCities = []; // Change number of slides in CSS also
-var arrType = [];
-var arrNames = [];
-var numOfCities = 0;
-var arrCitiesDivided = [];
-
-const $cont = $('.cont');
-const $slider = $('.slider');
-const $nav = $('.nav');
-const winW = $(window).width();
-const animSpd = 750; // Change also in CSS
-const distOfLetGo = winW * 0.2;
-var curSlide = 1;
-var animation = false;
-var autoScrollVar = true;
-var diff = 0;
+var Mainlocation = null
+var MainspawnType = null
 
 $(document).ready(function() {
 
-    $cont.hide();
-    //$("#submit-spawn").hide();
+    $(".container").hide();
 
     window.addEventListener('message', function(event) {
         var data = event.data;
         if (data.type === "ui") {
             if (data.status == true) {
-                $(".cont").fadeIn(250);
+                $(".container").fadeIn(250);
             } else {
-                $(".cont").fadeOut(250);
+                $(".container").fadeOut(250);
             }
         }
 
         if (data.action == "setupLocations") {
-            setupLocations(data.locations, data.houses)
+            setupNewLocations(data.locations, data.houses, data.Apartment, data.ApartmentNames, data.Access)
         }
 
         if (data.action == "setupAppartements") {
             setupApps(data.locations)
         }
+
+        if (data.action == "AddCoord") {
+            $(".AddBlipForMap").html("")
+
+            $(".AddCoord").fadeIn(250);
+            $("#VecX").val(data.Coord.x);
+            $("#VecY").val(data.Coord.y);
+            $("#VecZ").val(data.Coord.z);
+            $("#VecH").val(data.Coord.h);
+
+            $("#BlipTop").val(50);
+            $("#BlipLeft").val(50);
+            $('.AddBlipForMap').append('<i style="top:'+50+'%; left:'+50+'%;" id="BlipSetting" class="fas fa-map-marker-alt location-pin IconClassStyle"></i>')
+        }
     })
+})
 
+$("#BlipTop").keyup(function(){
+    var Top = this.value
+    $("#BlipSetting").css({"top":Top+"%"});
 });
 
-
-function generateSlide(city) {
-    let frag1 = $(document.createDocumentFragment());
-    let frag2 = $(document.createDocumentFragment());
-    const numSlide = arrCities.indexOf(arrCities[city]) + 1;
-    const firstLetter = arrCitiesDivided[city][0].charAt(0);
-
-    const $slide =
-        $(`<div data-target="${numSlide}" class="slide slide--${numSlide}">
-            <div class="slide__darkbg slide--${numSlide}__darkbg"></div>
-            <div class="slide__text-wrapper slide--${numSlide}__text-wrapper"></div>
-          </div>`);
-
-    const letter =
-        $(`<div class="slide__letter slide--${numSlide}__letter">
-            ${firstLetter}
-          </div>`);
-
-    for (let i = 0, length = arrCitiesDivided[city].length; i < length; i++) {
-        const text =
-            $(`<div class="slide__text slide__text--${i + 1}">
-              ${arrCitiesDivided[city][i]}
-            </div>`);
-        frag1.append(text);
-    }
-
-    const navSlide = $(`<li data-target="${numSlide}" class="nav__slide nav__slide--${numSlide}"></li>`);
-    frag2.append(navSlide);
-    $nav.append(frag2);
-
-    $slide.find(`.slide--${numSlide}__text-wrapper`).append(letter).append(frag1);
-    $slider.append($slide);
-
-    if (arrCities[city].length <= 4) {
-        $('.slide--' + numSlide).find('.slide__text').css("font-size", "12vw");
-    }
-}
-
-// Navigation
-function bullets(dir) {
-    $('.nav__slide--' + curSlide).removeClass('nav-active');
-    $('.nav__slide--' + dir).addClass('nav-active');
-}
-
-function timeout() {
-    animation = false;
-}
-
-function pagination(direction) {
-    animation = true;
-    diff = 0;
-    $slider.addClass('animation');
-    $slider.css({
-        'transform': 'translate3d(-' + (curSlide - direction) * 100 + '%, 0, 0)'
-    });
-
-
-    $slider.find('.slide__darkbg').css({
-        'transform': 'translate3d(' + (curSlide - direction) * 50 + '%, 0, 0)'
-    });
-
-
-    $slider.find('.slide__letter').css({
-        'transform': 'translate3d(0, 0, 0)'
-    });
-
-
-    $slider.find('.slide__text').css({
-        'transform': 'translate3d(0, 0, 0)'
-    });
-
-}
-
-function navigateRight() {
-    if (!autoScrollVar) return;
-    if (curSlide >= numOfCities) return;
-    pagination(0);
-    setTimeout(timeout, animSpd);
-    bullets(curSlide + 1);
-    curSlide++;
-}
-
-function navigateLeft() {
-    if (curSlide <= 1) return;
-    pagination(2);
-    setTimeout(timeout, animSpd);
-    bullets(curSlide - 1);
-    curSlide--;
-}
-
-function toDefault() {
-    pagination(1);
-    setTimeout(timeout, animSpd);
-}
-
-var currentLocation = null
-
-$(document).on('click', '.nav__slide:not(.nav-active)', function() {
-    let target = +$(this).attr('data-target');
-    bullets(target);
-    curSlide = target;
-    pagination(1);
-
-    if (arrType[curSlide] !== "lab") {
-        $("#spawn-label").html("SPAWN - " + arrNames[curSlide - 1]);
-        $("#submit-spawn").attr("data-location", arrCities[curSlide - 1]);
-        $("#submit-spawn").attr("data-type", arrType[curSlide - 1]);
-        $("#submit-spawn").fadeIn(100);
-        $.post('https://qb-spawn/setCam', JSON.stringify({
-            posname: arrCities[curSlide - 1],
-            type: arrType[curSlide - 1],
-        }));
-        currentLocation = this;
-    }
+$("#BlipLeft").keyup(function(){
+    var Left = this.value
+    $("#BlipSetting").css({"left":Left+"%"});
 });
 
-$(document).on('click', '#submit-spawn', function(evt) {
-    evt.preventDefault(); //dont do default anchor stuff
+var SelectLocForSpawn = null
+var apartNames = null
+$(document).on('click', '#IconClassStyle', function(evt){
+    evt.preventDefault();
     var location = $(this).data('location');
-    var spawnType = $(this).data('type');
-    //$(".cont").hide();
+    var type = $(this).data('type');
+    var label = $(this).data('label');
+    if (type == "appartment2") {
+        apartNames = $(this).data('apartname')
+    }
+    $(".TextFoJSCode").html("Select a Location")
+    if (type !== "lab") {
 
-    $("div").remove(".slide__text");
-    $("div").remove(".slide__letter");
-    $("div").remove(".slide");
-    $("li").remove(".nav__slide");
+        $.post('https://qb-spawn/setCam', JSON.stringify({
+            posname: location,
+            type: type,
+        }));
 
-    if (spawnType !== "appartment") {
-        $.post('https://qb-spawn/spawnplayer', JSON.stringify({
-            spawnloc: location,
-            typeLoc: spawnType
-        }));
-    } else {
-        $.post('https://qb-spawn/chooseAppa', JSON.stringify({
-            appType: location,
-        }));
+        if(SelectLocForSpawn == null){
+            SelectLocForSpawn = this
+            Mainlocation = location
+            MainspawnType = type
+            $(this).addClass('selected');
+            if(MainspawnType == "appartment"){
+                $(".TextFoJSCode").html("Appartment: "+label)
+            }else{
+                $(".TextFoJSCode").html(label)
+            }
+        }else if(SelectLocForSpawn == this){
+            $(this).removeClass("selected");
+            if(MainspawnType == "appartment"){
+                $(".TextFoJSCode").html("Select a Appartment")
+            }else{
+                $(".TextFoJSCode").html("Select a Location")
+            }
+            SelectLocForSpawn = null
+            Mainlocation = null
+            MainspawnType = null
+            
+        }else{
+            $(SelectLocForSpawn).removeClass("selected");
+            $(this).addClass('selected');
+            Mainlocation = location
+            MainspawnType = type
+            SelectLocForSpawn = this
+            if(MainspawnType == "appartment"){
+                $(".TextFoJSCode").html("Appartment: "+label)
+            }else{
+                $(".TextFoJSCode").html(label)
+            }
+        }
     }
 });
 
-function setupLocations(locations, myHouses) {
+$(document).on('click', '.GreenBTN', function(evt){
+    evt.preventDefault();
 
-    arrCities = [];
-    arrType = []
-    arrNames = [];
+    if (Mainlocation !== null){
+        $(".container").addClass("hideContainer").fadeOut("9000");
+        setTimeout(function(){
+            $(".hideContainer").removeClass("hideContainer");
+        }, 900);
 
-    //var parent = $('.cont')
-    //$cont.html("");
+        $(SelectLocForSpawn).removeClass("selected");
+        SelectLocForSpawn = null
 
-
-    setTimeout(function() {
-        arrCities.push("current");
-        arrType.push("current");
-        arrNames.push("Last Location");
-        //$(parent).append('<div class="location" id="location" data-location="current" data-type="current" data-label="Last Location"><p><span id="current-location">Last Location</span></p></div>');
-
-        $.each(locations, function(index, location) {
-            arrCities.push(location.location);
-            arrType.push("normal");
-            arrNames.push(location.label);
-            //$(parent).append('<div class="location" id="location" data-location="'+location.location+'" data-type="normal" data-label="'+location.label+'"><p><span id="'+location.location+'">'+location.label+'</span></p></div>')
-        });
-
-        if (myHouses != undefined) {
-            $.each(myHouses, function(index, house) {
-                arrCities.push(house.house);
-                arrType.push("house");
-                arrNames.push(house.label);
-                //$(parent).append('<div class="location" id="location" data-location="'+house.house+'" data-type="house" data-label="'+house.label+'"><p><span id="'+house.house+'">'+house.label+'</span></p></div>')
-            });
-        }
-
-        $cont.append('<div class="submit-spawn" id="submit-spawn"><p><span id="spawn-label"></span></p></div>');
-        //$('.submit-spawn').hide();
-
-        numOfCities = arrCities.length;
-        arrCitiesDivided = [];
-        currLoc = arrCities[0];
-
-        arrNames.map(city => {
-            let length = city.length;
-            let letters = Math.floor(length / 4);
-            let exp = new RegExp(".{1," + letters + "}", "g");
-
-            arrCitiesDivided.push(city.match(exp));
-        });
-
-        console.log(arrCitiesDivided);
-
-        for (let i = 0, length = numOfCities; i < length; i++) {
-            generateSlide(i);
-        }
-
-        $('.nav__slide--1').addClass('nav-active');
-
-        if (arrType[curSlide - 1] !== "lab") {
-            $("#spawn-label").html("SPAWN - " + arrNames[curSlide - 1]);
-            $("#submit-spawn").attr("data-location", arrCities[curSlide - 1]);
-            $("#submit-spawn").attr("data-type", arrType[curSlide - 1]);
-            $("#submit-spawn").fadeIn(100);
-            $.post('https://qb-spawn/setCam', JSON.stringify({
-                posname: arrCities[curSlide - 1],
-                type: arrType[curSlide - 1],
+        if (MainspawnType == "apartment1") {
+            $.post('https://qb-spawn/spawnplayerappartment1', JSON.stringify({
+                spawnloc: Mainlocation,
+                apartName: apartNames,
             }));
-            currentLocation = this;
+        } else if(MainspawnType !== "appartment"){
+            $.post('https://qb-spawn/spawnplayer', JSON.stringify({
+                spawnloc: Mainlocation,
+                typeLoc: MainspawnType
+            }));
+        }else {
+            $.post('https://qb-spawn/chooseAppa', JSON.stringify({
+                appType: Mainlocation,
+            }));
+        } 
+    } else {
+        console.log('Error: Not location selected')
+    }
+
+});
+
+$(document).on('click', '.CloseBTN', function(evt){
+    evt.preventDefault();
+    CloseAddCoord()
+});
+
+function setupNewLocations(locations, myHouses, Apartment, ApartmentName, Access) {
+    var parent = $('.spawn-locations-new')
+    $(parent).html("");
+    $('.dropdown-menu').html("");
+
+    $(".RedBTN").fadeIn(1);
+    $(".LastBTN").fadeIn(1);
+    $(".TextFoJSCode").html('SPAWN <i style="color: black;" class="fas fa-map-marked-alt"></i>')
+
+    $(".TextFoJSCode").html("Select a Location")
+    Mainlocation = null
+    MainspawnType = null
+    if(SelectLocForSpawn !== null){
+        $(SelectLocForSpawn).removeClass("selected");
+        SelectLocForSpawn = null
+    }
+
+    if(Access.houses == false){
+        $(".RedBTN").fadeOut(1);
+    }
+    if(Access.lastLoc == false){
+        $(".LastBTN").fadeOut(1);
+    }
+
+    setTimeout(function(){
+        if(Access.apartments == true){
+            if(Apartment.pos !== undefined){
+                $(parent).append('<i style="top:'+Apartment.pos.top+'%; left:'+Apartment.pos.left+'%;" data-location="'+Apartment.name+'" data-type="appartment2" data-label="'+Apartment.label+'" data-apartname="'+ApartmentName+'" id="IconClassStyle" class="fas fa-building IconClassStyle2"></i>')
+            }
         }
+
+        $.each(locations, function(index, location){
+            $(parent).append('<i style="top:'+location.pos.top+'%; left:'+location.pos.left+'%;" data-location="'+location.location+'" data-type="normal" data-label="'+location.label+'" id="IconClassStyle" class="fas fa-map-marker-alt IconClassStyle"></i>')
+        });
+
+        if(Access.houses == true){
+            if (myHouses != undefined) {
+                $.each(myHouses, function(index, house){             
+                    $(".dropdown-menu").append('<li id="IconClassStyle" data-location="'+house.house+'" data-type="house" data-label="'+house.label+'"><p><span id="'+house.house+'">'+house.label+'</span></p></li>');
+                });
+            }
+        }
+
     }, 100)
 }
 
 function setupApps(apps) {
+    var parent = $('.spawn-locations-new')
+    $(parent).html("");
 
-    arrCities = [];
-    arrType = []
-    arrNames = [];
+    $(".RedBTN").fadeOut(1);
+    $(".LastBTN").fadeOut(1);
+    $(".TextFoJSCode").html('SELECT <i style="color: black;" class="fas fa-check"></i>')
 
-    $.each(apps, function(index, app) {
-        //console.log(app.name + " " + app.label)
-        arrCities.push(app.name);
-        arrType.push("appartment");
-        arrNames.push(app.label);
-    });
-
-    $cont.append('<div class="submit-spawn" id="submit-spawn"><p><span id="spawn-label"></span></p></div>');
-
-    numOfCities = arrCities.length;
-    arrCitiesDivided = [];
-    currLoc = arrCities[0];
-
-    arrNames.map(city => {
-        let length = city.length;
-        let letters = Math.floor(length / 4);
-        let exp = new RegExp(".{1," + letters + "}", "g");
-
-        arrCitiesDivided.push(city.match(exp));
-    });
-
-    //console.log(arrCitiesDivided);
-
-    for (let i = 0, length = numOfCities; i < length; i++) {
-        generateSlide(i);
+    $(".TextFoJSCode").html("Select a Appartment")
+    Mainlocation = null
+    MainspawnType = null
+    if(SelectLocForSpawn !== null){
+        $(SelectLocForSpawn).removeClass("selected");
+        SelectLocForSpawn = null
     }
 
-    $('.nav__slide--1').addClass('nav-active');
-
-    if (arrType[curSlide - 1] !== "lab") {
-        $("#spawn-label").html("SPAWN - " + arrNames[curSlide - 1]);
-        $("#submit-spawn").attr("data-location", arrCities[curSlide - 1]);
-        $("#submit-spawn").attr("data-type", "appartment");
-        $("#submit-spawn").fadeIn(100);
-        $.post('https://qb-spawn/setCam', JSON.stringify({
-            posname: arrCities[curSlide - 1],
-            type: "appartment",
-        }));
-    }
+    $.each(apps, function(index, app){
+        if(app.pos !== undefined){
+            $(parent).append('<i style="top:'+app.pos.top+'%; left:'+app.pos.left+'%;" data-location="'+app.name+'" data-type="appartment" data-label="'+app.label+'" id="IconClassStyle" class="fas fa-building IconClassStyle2"></i>')
+        }
+    });
 }
+
+function CloseAddCoord() {
+    $.post('https://qb-spawn/CloseAddCoord', JSON.stringify({}));
+    $(".AddCoord").fadeOut(250);
+}
+
+const copyToClipboard = str => {
+    const el = document.createElement('textarea');
+    el.value = str;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+};
+
+$(document).on('click', '.ApartBTN', function(e){
+    e.preventDefault();
+    let source = '["'+$("#VecName").val()+'"] = {'+
+                    'name = "'+$("#VecName").val()+'",'+
+                    'label = "'+$("#VecLabel").val()+'",'+
+                    'coords = {'+
+                        'enter = vector4('+$("#VecX").val()+', '+$("#VecY").val()+', '+$("#VecZ").val()+', '+$("#VecH").val()+'),'+
+                    '},'+
+                    'pos = {top = '+$("#BlipTop").val()+', left = '+$("#BlipLeft").val()+'},'+
+                '},';
+    copyToClipboard(source)
+    CloseAddCoord()
+});
+
+$(document).on('click', '.SpawnBTN', function(e){
+    e.preventDefault();
+    let source = '["'+$("#VecName").val()+'"] = {'+
+                    'coords = vector4('+$("#VecX").val()+', '+$("#VecY").val()+', '+$("#VecZ").val()+', '+$("#VecH").val()+'),'+
+                    'location = "'+$("#VecName").val()+'",'+
+                    'label = "'+$("#VecLabel").val()+'",'+
+                    'pos = {top = '+$("#BlipTop").val()+', left = '+$("#BlipLeft").val()+'},'+
+                '},';
+    copyToClipboard(source)
+    CloseAddCoord()
+});
+
+$('.dropdown').click(function () {
+    $(this).attr('tabindex', 1).focus();
+    $(this).toggleClass('active');
+    $(this).find('.dropdown-menu').slideToggle(300);
+});
+
+$('.dropdown').focusout(function () {
+    $(this).removeClass('active');
+    $(this).find('.dropdown-menu').slideUp(300);
+});
