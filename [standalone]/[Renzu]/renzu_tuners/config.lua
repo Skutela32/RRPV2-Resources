@@ -18,7 +18,6 @@ config.upgradevariation = { -- enable/disable upgrade variation.
 	['elite'] = true,
 	['pro'] = true,
 	['racing'] = true,
-	['ultimate'] = true,
 }
 
 config.enablecrafting = true -- crafting for items and parts,turbo, engine etc..
