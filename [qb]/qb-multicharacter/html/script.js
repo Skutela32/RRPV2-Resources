@@ -92,7 +92,7 @@ $(document).ready(function (){
                         });
                     }, 2000);
                 }, 2000);
-                background.volume = 0.3;
+                background.volume = 0.2;
                 background.currentTime = 0
                 background.play();
             } else {
