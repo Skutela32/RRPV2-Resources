@@ -485,7 +485,7 @@ AddEventHandler('entityRemoved', function(entity)
 		if vehiclestats[plate] and vehiclestats[plate].active then
 			vehiclestats[plate].plate = nil
 			vehiclestats[plate].active = nil
-			local vehicle = MySQL.query.await('SELECT plate FROM `'player_vehicles'` WHERE `plate` = ?', {plate})
+			local vehicle = MySQL.query.await('SELECT plate FROM `'..player_vehicles..'` WHERE `plate` = ?', {plate})
 			if vehicle and vehicle[1].plate then
 				db.updateall({
 					vehiclestats = json.encode(vehiclestats[plate] or {}),
