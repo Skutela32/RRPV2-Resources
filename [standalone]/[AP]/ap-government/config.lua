@@ -22,7 +22,7 @@ Config = {
 	  [3] = 500, -- Keep this below 500 for What would you bring to the city, This is for the length of the string in the application.
 	},
 	Phone = {GKSPhone = false, QBPhone = true, QuasarPhone = false, HighPhone = false, Custom = false}, -- Set to the phone you use to true, if you do not have one of these phones then set Custom to true and edit the function in webhooks.lua.
-	Interactions = {qbTarget = true, qTarget = false, drawText = false}, -- Set the target system to true that you use.
+	Interactions = {qbTarget = false, qTarget = false, drawText = true}, -- Set the target system to true that you use.
 	Banking = {
 	  okokbanking = false, -- Set this to true if you own okokbanking and you want the tax to show as a transaction.
 	  other = false -- Set to true if you own a differnt banking script and want to add an export, to edit this open functions.lua and edit the banking function.

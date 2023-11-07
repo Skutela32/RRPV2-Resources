@@ -44,6 +44,9 @@ Config = {
 		disablePreviewPlate = false,-- enable this to disable temporary plate while previewing
 
 		modCam = true,				-- Set to false to stop custom cameras angles when editing vehicles
+
+		saveOnExit = false,			-- Enable this to save a vehicle to database when player exits their vehicle
+									-- Does not work if they "delete" it, eg. If your garage system doesn't remove the player from the car before parking
 	},
 	Harness = {
 		JobOnly = false,			-- Only allow job roles to add a Harness to vehicle

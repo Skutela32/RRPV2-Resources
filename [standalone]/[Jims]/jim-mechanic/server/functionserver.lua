@@ -43,13 +43,6 @@ local Previewing, xenonColour, VehicleNitrous, nosColour, DutyList = {}, {}, {},
 		else cb(0) end
 	end)
 
-	RegisterNetEvent('qb-vehicletuning:server:SaveVehicleProps', function(vehicleProps)
-		if IsVehicleOwned(vehicleProps.plate) then
-			MySQL.update('UPDATE player_vehicles SET mods = ? WHERE plate = ?',
-				{json.encode(vehicleProps), vehicleProps.plate})
-		end
-	end)
-
 ---==[[ UPDATE DATABASE MILAGE ]]==---
 	RegisterNetEvent('jim-mechanic:server:UpdateDrivingDistance', function(plate, DistAdd)
 		local result = MySQL.scalar.await('SELECT traveldistance FROM player_vehicles WHERE plate = ?', {plate})
@@ -409,60 +402,58 @@ if not Config.Overrides.disableNos then
 	end]]
 
 	--Syncing stuff
-	RegisterNetEvent('jim-mechanic:server:SyncPurge', function(netId, enabled, size)
+	RegisterNetEvent('jim-mechanic:server:SyncPurge', function(netId, enabled, size, coords)
 		if not enabled then
-			TriggerClientEvent('jim-mechanic:client:SyncPurge', -1, netId, false)
+			TriggerClientEvent('jim-mechanic:client:SyncPurge', -1, netId, false, size, coords)
 		else
 			local nearbyList = {}
 			local Players = QBCore.Functions.GetQBPlayers()
 			for _, v in pairs(Players) do
-				local ped = GetPlayerPed(v.PlayerData.source)
-				if #(GetEntityCoords(netId) - GetEntityCoords(ped)) <= (Config.NOS.PurgeDis or 30.0) then nearbyList[#nearbyList+1] = v.PlayerData.source end
+				if #(coords - GetEntityCoords(GetPlayerPed(v.PlayerData.source))) <= (Config.NOS.PurgeDis or 30.0) then
+					nearbyList[#nearbyList+1] = v.PlayerData.source
+				end
 			end
 			for i = 1, #nearbyList do
-				TriggerClientEvent('jim-mechanic:client:SyncPurge', nearbyList[i], netId, enabled, size)
+				TriggerClientEvent('jim-mechanic:client:SyncPurge', nearbyList[i], netId, enabled, size, coords)
 			end
 		end
 	end)
-	RegisterNetEvent('jim-mechanic:server:SyncTrail', function(netId, enabled)
+	RegisterNetEvent('jim-mechanic:server:SyncTrail', function(netId, enabled, coords)
 		if not enabled then
-			TriggerClientEvent('jim-mechanic:client:SyncTrail', -1, netId, false)
+			TriggerClientEvent('jim-mechanic:client:SyncTrail', -1, netId, false, coords)
 		else
 			local nearbyList = {}
 			local Players = QBCore.Functions.GetQBPlayers()
 			for _, v in pairs(Players) do
-				local ped = GetPlayerPed(v.PlayerData.source)
-				if #(GetEntityCoords(netId) - GetEntityCoords(ped)) <= (Config.NOS.TrailsDis or 30.0) then
+				if #(coords - GetEntityCoords(GetPlayerPed(v.PlayerData.source))) <= (Config.NOS.TrailsDis or 30.0) then
 					nearbyList[#nearbyList+1] = v.PlayerData.source
 				end
 			end
 			for i = 1, #nearbyList do
-				TriggerClientEvent('jim-mechanic:client:SyncTrail', nearbyList[i], netId, enabled)
+				TriggerClientEvent('jim-mechanic:client:SyncTrail', nearbyList[i], netId, enabled, coords)
 			end
 		end
 	end)
-	RegisterNetEvent('jim-mechanic:server:SyncFlame', function(netId, enabled, antilag, level)
+	RegisterNetEvent('jim-mechanic:server:SyncFlame', function(netId, enabled, antilag, level, coords)
 		if not enabled then
 			local nearbyList = {}
 			local Players = QBCore.Functions.GetQBPlayers()
 			for _, v in pairs(Players) do
-				local ped = GetPlayerPed(v.PlayerData.source)
-				if #(GetEntityCoords(netId) - GetEntityCoords(ped)) <= (Config.NOS.FlameDis or 30.0) then
+				if #(coords - GetEntityCoords(GetPlayerPed(v.PlayerData.source))) <= (Config.NOS.FlameDis or 30.0) then
 					nearbyList[#nearbyList+1] = v.PlayerData.source
 				end
 			end
-			TriggerClientEvent('jim-mechanic:client:SyncFlame', -1, netId, false, antilag, level)
+			TriggerClientEvent('jim-mechanic:client:SyncFlame', -1, netId, false, antilag, level, coords)
 		else
 			local nearbyList = {}
 			local Players = QBCore.Functions.GetQBPlayers()
 			for _, v in pairs(Players) do
-				local ped = GetPlayerPed(v.PlayerData.source)
-				if #(GetEntityCoords(netId) - GetEntityCoords(ped)) <= (Config.NOS.FlameDis or 30.0) then
+				if #(coords - GetEntityCoords(GetPlayerPed(v.PlayerData.source))) <= (Config.NOS.FlameDis or 30.0) then
 					nearbyList[#nearbyList+1] = v.PlayerData.source
 				end
 			end
 			for i = 1, #nearbyList do
-				TriggerClientEvent('jim-mechanic:client:SyncFlame', nearbyList[i], netId, enabled, antilag, level)
+				TriggerClientEvent('jim-mechanic:client:SyncFlame', nearbyList[i], netId, enabled, antilag, level, coords)
 			end
 		end
 	end)

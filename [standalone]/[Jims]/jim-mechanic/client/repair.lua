@@ -217,6 +217,7 @@ RegisterNetEvent('jim-mechanic:client:Repair:Check', function(skip) local Ped = 
 			icon = v.icon,
 			isMenuHeader = (headerlock or skip),
 			header = v.header.." - "..math.floor((damageTable[v.part]+0.5)).."%",
+			txt = costTable[v.part],
 			onSelect = function() TriggerEvent("jim-mechanic:client:Repair:Sure", { part = v.part, partname = v.header, vehicle = vehicle, cost = v.amount }) end,
 			progress = damageTable[v.part],
 			colorScheme = (damageTable[v.part] and (damageTable[v.part] > 80)) and "green.5" or ((damageTable[v.part] and (damageTable[v.part] < 30)) and "red.8") or "yellow.8"

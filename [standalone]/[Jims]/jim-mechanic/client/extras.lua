@@ -386,7 +386,6 @@ RegisterNetEvent("jim-mechanic:Client:ExitVehicle", function()
 			TriggerServerEvent('jim-mechanic:server:UpdateNitroLevel', plate, VehicleNitrous[plate].level) -- Update the nos when you are no longer in that vehicle
 			forceStopNos() -- Remove any changed effects to the vehicle
 		end
-		updateCar(veh)
 		TriggerServerEvent('jim-mechanic:server:UpdateDrivingDistance', plate, math.round(DistAdd))
 		effectTimer = 0
 		damageTimer = 0
@@ -395,6 +394,10 @@ RegisterNetEvent("jim-mechanic:Client:ExitVehicle", function()
 		DistAdd = 0
 		maxSpeed = 0
 		if DoesEntityExist(veh) and veh ~= 0 and veh ~= nil and defVehStats[plate] then
+			if Config.Overrides.saveOnExit then
+				local mods = QBCore.Functions.GetVehicleProperties(veh)
+				TriggerServerEvent('jim-mechanic:updateVehicle', mods, plate)
+			end
 			--Handling Changes
 			if Config.NOS.HandlingChange then
 				SetVehicleHandlingFloat(veh, "CHandlingData", "fMass", defVehStats[plate]["hFloat"])
@@ -540,7 +543,7 @@ RegisterNetEvent("jim-mechanic:Client:EnteredVehicle", function()
 									end
 								elseif Config.antiLag.scriptAudio then local netId = VehToNet(veh)
 									for sound = 1, math.random(1,4) do
-										TriggerServerEvent("jim-mechanic:server:playWithinDistance", netId)
+										TriggerServerEvent("jim-mechanic:server:playWithinDistance", netId, GetEntityCoords(veh))
 										triggerFlame(veh)
 									end
 								end
@@ -556,10 +559,10 @@ RegisterNetEvent("jim-mechanic:Client:EnteredVehicle", function()
 end)
 
 function triggerFlame(veh)
-	TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(veh), true, true)
+	TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(veh), true, true, nil, GetEntityCoords(veh))
 	SetVehicleTurboPressure(veh, 25.0)
 	Wait(math.random(100, 800))
-	TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(veh), false, true)
+	TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(veh), false, true, nil, GetEntityCoords(veh))
 	SetVehicleTurboPressure(veh, 0.0)
 end
 

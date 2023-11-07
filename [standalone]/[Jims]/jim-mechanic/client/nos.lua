@@ -190,7 +190,7 @@ RegisterCommand('+nosBoost', function()
 		if VehicleNitrous[Plate] and VehicleNitrous[Plate].hasnitro and (GetVehicleWheelieState(CurrentVehicle) ~= 129 and GetVehicleWheelieState(CurrentVehicle) ~= 65 and not IsEntityInAir(CurrentVehicle)) and GetPedInVehicleSeat(CurrentVehicle, -1) == Ped then
 			TriggerEvent('hud:client:UpdateNitrous', VehicleNitrous[Plate].hasnitro, VehicleNitrous[Plate].level, false)
 			if purgemode then
-				TriggerServerEvent('jim-mechanic:server:SyncPurge', VehToNet(CurrentVehicle), true, purgeSize)
+				TriggerServerEvent('jim-mechanic:server:SyncPurge', VehToNet(CurrentVehicle), true, purgeSize, GetEntityCoords(CurrentVehicle))
 				CreateThread(function()	while boosting do purgeCool += 1 Wait(500) end end)
 			end
 			if not purgemode then
@@ -202,10 +202,10 @@ RegisterCommand('+nosBoost', function()
 						SetNitroBoostScreenEffectsEnabled(true)
 					end
 					if Config.NOS.EnableTrails then
-						TriggerServerEvent('jim-mechanic:server:SyncTrail', VehToNet(CurrentVehicle), true)
+						TriggerServerEvent('jim-mechanic:server:SyncTrail', VehToNet(CurrentVehicle), true, GetEntityCoords(CurrentVehicle))
 					end
 					if Config.NOS.EnableFlame then
-						TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(CurrentVehicle), true, false, boostLevel)
+						TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(CurrentVehicle), true, false, boostLevel, GetEntityCoords(CurrentVehicle))
 					end
 					SetVehicleBoostActive(CurrentVehicle, 1)
 					CreateThread(function()
@@ -243,8 +243,8 @@ RegisterCommand('+nosBoost', function()
 								TriggerServerEvent('jim-mechanic:server:UnloadNitrous', Plate)
 								toggleItem(true, "noscan", 1)
 								if Config.NOS.EnableScreen then SetNitroBoostScreenEffectsEnabled(false) end
-								if Config.NOS.EnableTrails then	TriggerServerEvent('jim-mechanic:server:SyncTrail', VehToNet(CurrentVehicle), false) end
-								if Config.NOS.EnableFlame then TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(CurrentVehicle), false) end
+								if Config.NOS.EnableTrails then	TriggerServerEvent('jim-mechanic:server:SyncTrail', VehToNet(CurrentVehicle), false, GetEntityCoords(CurrentVehicle)) end
+								if Config.NOS.EnableFlame then TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(CurrentVehicle), false, nil, nil, GetEntityCoords(CurrentVehicle)) end
 								NitrousActivated = false
 								boosting = false
 								SetVehicleBoostActive(CurrentVehicle, false)
@@ -285,16 +285,16 @@ RegisterCommand('+nosBoost', function()
 									AddExplosion(GetOffsetFromEntityInWorldCoords(CurrentVehicle, 0.0, 1.6, 1.0), 23, 0.8, 1, 0, 1.0, true)
 									TriggerServerEvent('jim-mechanic:server:UnloadNitrous', Plate)
 									if Config.NOS.EnableScreen then SetNitroBoostScreenEffectsEnabled(false) end
-									if Config.NOS.EnableTrails then TriggerServerEvent('jim-mechanic:server:SyncTrail', VehToNet(CurrentVehicle), false) end
+									if Config.NOS.EnableTrails then TriggerServerEvent('jim-mechanic:server:SyncTrail', VehToNet(CurrentVehicle), false, GetEntityCoords(CurrentVehicle)) end
 									NitrousActivated = false
 									boosting = not boosting
 									SetVehicleBoostActive(CurrentVehicle, false, 0.0, 0.0, 0.0, false)
 									CreateThread(function()
 										if Config.NOS.EnableFlame then
 											for i = 0, 10 do
-												TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(CurrentVehicle), true)
+												TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(CurrentVehicle), true, nil, nil, GetEntityCoords(CurrentVehicle))
 												Wait(math.random(200,500))
-												TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(CurrentVehicle), false)
+												TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(CurrentVehicle), false, nil, nil, GetEntityCoords(CurrentVehicle))
 												Wait(math.random(0,100))
 											end
 										end
@@ -315,11 +315,11 @@ end)
 function forceStopNos() local Ped = PlayerPedId()
 	if Config.System.Debug then print("^5Debug^7: ^3forceStopNos^7: ^4Driver left vehicle, resetting NOS effects") end
 	SetVehicleBoostActive(GetVehiclePedIsIn(Ped, true), false, 0.0, 0.0, 0.0, false)
-	TriggerServerEvent('jim-mechanic:server:SyncPurge', VehToNet(GetVehiclePedIsIn(Ped, true)), false)
+	TriggerServerEvent('jim-mechanic:server:SyncPurge', VehToNet(GetVehiclePedIsIn(Ped, true)), false, nil, GetEntityCoords(GetVehiclePedIsIn(Ped, true)))
 	if Config.NOS.EnableFlame then
-		TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(GetVehiclePedIsIn(Ped, true)), false)
+		TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(GetVehiclePedIsIn(Ped, true)), false, nil, nil, GetEntityCoords(GetVehiclePedIsIn(Ped, true)))
 	end
-	if Config.NOS.EnableTrails then TriggerServerEvent('jim-mechanic:server:SyncTrail', VehToNet(GetVehiclePedIsIn(Ped, true)), false) end
+	if Config.NOS.EnableTrails then TriggerServerEvent('jim-mechanic:server:SyncTrail', VehToNet(GetVehiclePedIsIn(Ped, true)), false, GetEntityCoords(GetVehiclePedIsIn(Ped, true))) end
 	if Config.NOS.EnableScreen then SetNitroBoostScreenEffectsEnabled(false) end
 	local Plate = trim(GetVehicleNumberPlateText(GetVehiclePedIsIn(Ped, true)))
 	if VehicleNitrous[Plate] then
@@ -351,11 +351,11 @@ end
 RegisterCommand('-nosBoost', function()
 	local Ped = PlayerPedId()
 	if tonumber(CurrentVehicle) == 0 or DoesEntityExist(CurrentVehicle) == false then return end
-	TriggerServerEvent('jim-mechanic:server:SyncPurge', VehToNet(CurrentVehicle), false)
+	TriggerServerEvent('jim-mechanic:server:SyncPurge', VehToNet(CurrentVehicle), false, nil, GetEntityCoords(CurrentVehicle))
 	if NitrousActivated then
 		StopSound(soundId)
 		SetVehicleBoostActive(CurrentVehicle, 0)
-		if Config.NOS.EnableFlame then TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(CurrentVehicle), false) end
+		if Config.NOS.EnableFlame then TriggerServerEvent('jim-mechanic:server:SyncFlame', VehToNet(CurrentVehicle), false, nil, nil, GetEntityCoords(CurrentVehicle)) end
 		TriggerEvent('hud:client:UpdateNitrous', VehicleNitrous[Plate].hasnitro, VehicleNitrous[Plate].level, false)
 		NitrousActivated = not NitrousActivated
 
@@ -366,7 +366,7 @@ RegisterCommand('-nosBoost', function()
 			ModifyVehicleTopSpeed(CurrentVehicle, defVehStats[Plate]["speedMod"])
 		end
 
-		if Config.NOS.EnableTrails then TriggerServerEvent('jim-mechanic:server:SyncTrail', VehToNet(CurrentVehicle), false) end
+		if Config.NOS.EnableTrails then TriggerServerEvent('jim-mechanic:server:SyncTrail', VehToNet(CurrentVehicle), false, GetEntityCoords(CurrentVehicle)) end
 		if Config.NOS.EnableScreen then SetNitroBoostScreenEffectsEnabled(false) end
 		if VehicleNitrous[Plate] then
 			CreateThread(function()
@@ -408,10 +408,12 @@ end)]]
 --Purge Effects
 local vehiclePurge, vehicleTrails = {}, {}
 
-RegisterNetEvent('jim-mechanic:client:SyncPurge', function(netid, enabled, size)
-	if not NetworkDoesEntityExistWithNetworkId(netid) then return end
-	if #(GetEntityCoords(NetToVeh(netid)) - GetEntityCoords(PlayerPedId())) >= 200 then return end
-	if DoesEntityExist(NetToVeh(netid)) then SetVehicleNitroPurgeEnabled(NetToVeh(netid), enabled, size) end
+RegisterNetEvent('jim-mechanic:client:SyncPurge', function(netid, enabled, size, coords)
+	if coords and #(coords - GetEntityCoords(PlayerPedId())) <= (Config.NOS.PurgeDis or 30.0) then
+		if not NetworkDoesEntityExistWithNetworkId(netid) then return end
+		if #(GetEntityCoords(NetToVeh(netid)) - GetEntityCoords(PlayerPedId())) >= 200 then return end
+		if DoesEntityExist(NetToVeh(netid)) then SetVehicleNitroPurgeEnabled(NetToVeh(netid), enabled, size) end
+	end
 end)
 
 function SetVehicleNitroPurgeEnabled(vehicle, enabled, size)
@@ -473,10 +475,13 @@ end
 
 --[[TRAIL EFFECTS]]--
 local trailTable = {}
-RegisterNetEvent('jim-mechanic:client:SyncTrail', function(netid, enabled) local vehEntity = NetToVeh(netid)
-	if not NetworkDoesEntityExistWithNetworkId(netid) then return end
-	if vehEntity ~= 0 and DoesEntityExist(vehEntity) and IsEntityAVehicle(vehEntity) then
-		SetVehicleLightTrailEnabled(vehEntity, enabled)
+RegisterNetEvent('jim-mechanic:client:SyncTrail', function(netid, enabled, coords)
+	if coords and #(coords - GetEntityCoords(PlayerPedId())) <= (Config.NOS.TrailsDis or 30.0) then
+		local vehEntity = NetToVeh(netid)
+		if not NetworkDoesEntityExistWithNetworkId(netid) then return end
+		if vehEntity ~= 0 and DoesEntityExist(vehEntity) and IsEntityAVehicle(vehEntity) then
+			SetVehicleLightTrailEnabled(vehEntity, enabled)
+		end
 	end
 end)
 
@@ -513,14 +518,16 @@ end
 
 --[[FLAME EFFECTS]]--
 local flameTable = {}
-RegisterNetEvent('jim-mechanic:client:SyncFlame', function(netid, enable, antilag, level)
+RegisterNetEvent('jim-mechanic:client:SyncFlame', function(netid, enable, antilag, level, coords)
 	if enable then
-		local vehEntity = NetToVeh(netid)
-		if DoesEntityExist(NetToVeh(netid)) and IsEntityAVehicle(NetToVeh(netid)) then
-			if antilag then
-				CreateVehicleExhaustBackfire(vehEntity)
-			else
-				startFlame(netid, level)
+		if coords and #(coords - GetEntityCoords(PlayerPedId())) <= (Config.NOS.FlameDis or 30.0) then
+			local vehEntity = NetToVeh(netid)
+			if DoesEntityExist(NetToVeh(netid)) and IsEntityAVehicle(NetToVeh(netid)) then
+				if antilag then
+					CreateVehicleExhaustBackfire(vehEntity)
+				else
+					startFlame(netid, level)
+				end
 			end
 		end
 	else
@@ -635,10 +642,10 @@ RegisterNetEvent('jim-mechanic:client:NOS:RGBApply', function(data) local Ped = 
 	local cam = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", GetOffsetFromEntityInWorldCoords(vehicle, 1.8, -3.5, 2.5), 0.0, 0.0, 0.0, 60.00, false, 0) PointCamAtEntity(cam, vehicle)
 	startTempCam(cam)
 	Wait(300)
-	TriggerServerEvent('jim-mechanic:server:SyncPurge', VehToNet(vehicle), true, 1.0)
+	TriggerServerEvent('jim-mechanic:server:SyncPurge', VehToNet(vehicle), true, 1.0, GetEntityCoords(vehicle))
 	Wait(2000)
 	stopTempCam()
-	TriggerServerEvent('jim-mechanic:server:SyncPurge', VehToNet(vehicle), false)
+	TriggerServerEvent('jim-mechanic:server:SyncPurge', VehToNet(vehicle), false, nil, GetEntityCoords(vehicle))
 end)
 
 RegisterNetEvent('jim-mechanic:client:NOS:RGBHexMenu', function(data)
