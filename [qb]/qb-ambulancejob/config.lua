@@ -1,10 +1,10 @@
 Config = {}
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add setr UseTarget true)
-Config.MinimalDoctors = 2 -- How many players with the ambulance job to prevent the hospital check-in system from being used
-Config.DocCooldown = 1 -- Cooldown between doctor calls allowed, in minutes
+Config.MinimalDoctors = 1 -- How many players with the ambulance job to prevent the hospital check-in system from being used
+Config.DocCooldown = 0.5 -- Cooldown between doctor calls allowed, in minutes
 Config.WipeInventoryOnRespawn = true -- Enable or disable removing all the players items when they respawn at the hospital
 Config.Helicopter = "polmav" -- Helicopter model that players with the ambulance job can use
-Config.BillCost = 2000 -- Price that players are charged for using the hospital check-in system
+Config.BillCost = 250 -- Price that players are charged for using the hospital check-in system
 Config.DeathTime = 300 -- How long the timer is for players to bleed out completely and respawn at the hospital
 Config.ReviveInterval = 360 -- How long the timer is for players to revive a player in laststand
 Config.MinimumRevive = 300 -- How long the timer is for players to revive a player in laststand
@@ -37,43 +37,42 @@ Config.AlertShowInfo = 2 -- How many injuries a player must have before being al
 
 Config.Locations = { -- Edit the various interaction points for players or create new ones
     ["checking"] = {
-	    [1] = vector3(308.19, -595.35, 43.29),
+	    [1] = vector3(355.05, -1397.65, 32.5),
 	    [2] = vector3(-254.54, 6331.78, 32.43), -- paleto
     },
     ["duty"] = {
-        [1] = vector3(311.18, -599.25, 43.29),
+        [1] = vector3(351.96, -1410.11, 32.5),
         [2] = vector3(-254.88, 6324.5, 32.58),
     },
     ["vehicle"] = {
-        [1] = vector4(294.578, -574.761, 43.179, 35.79),
+        [1] = vector4(312.74, -1374.69, 31.83, 143.44),
         [2] = vector4(-234.28, 6329.16, 32.15, 222.5),
     },
     ["helicopter"] = {
-        [1] = vector4(351.58, -587.45, 74.16, 160.5),
+        [1] = vector4(313.3, -1465.27, 46.51, 141.84),
         [2] = vector4(-475.43, 5988.353, 31.716, 31.34),
     },
     ["armory"] = {
-        [1] = vector3(309.93, -602.94, 43.29),
+        [1] = vector3(359.48, -1421.07, 32.5),
         [2] = vector3(-245.13, 6315.71, 32.82),
     },
     ["roof"] = {
-        [1] = vector4(338.5, -583.85, 74.16, 245.5),
+        [1] = vector4(340.18, -1424.23, 46.51, 141.62),
     },
     ["main"] = {
-        [1] = vector3(298.74, -599.33, 43.29),
+        [1] = vector3(346.15, -1409.96, 32.51),
     },
     ["stash"] = {
-        [1] = vector3(309.78, -596.6, 43.29),
+        [1] = vector3(351.95, -1416.37, 32.5),
     },
     ["beds"] = {
-        [1] = {coords = vector4(353.1, -584.6, 43.11, 152.08), taken = false, model = 1631638868},
-        [2] = {coords = vector4(356.79, -585.86, 43.11, 152.08), taken = false, model = 1631638868},
-        [3] = {coords = vector4(354.12, -593.12, 43.1, 336.32), taken = false, model = 2117668672},
-        [4] = {coords = vector4(350.79, -591.8, 43.1, 336.32), taken = false, model = 2117668672},
-        [5] = {coords = vector4(346.99, -590.48, 43.1, 336.32), taken = false, model = 2117668672},
-        [6] = {coords = vector4(360.32, -587.19, 43.02, 152.08), taken = false, model = -1091386327},
-        [7] = {coords = vector4(349.82, -583.33, 43.02, 152.08), taken = false, model = -1091386327},
-        [8] = {coords = vector4(326.98, -576.17, 43.02, 152.08), taken = false, model = -1091386327},
+        [1] = {coords = vector4(361.18, -1407.45, 32.06,313.23), taken = false, model = 1004440924},
+        [2] = {coords = vector4(365.27, -1402.61, 32.06,142.78), taken = false, model = 1004440924},
+        [3] = {coords = vector4(367.84, -1404.77, 32.06,142.78), taken = false, model = 1004440924},
+        [4] = {coords = vector4(366.33, -1411.76, 32.06,313.23), taken = false, model = 1004440924},
+        [5] = {coords = vector4(368.9, -1413.92, 32.06,313.23), taken = false, model = 1004440924},
+        [6] = {coords = vector4(370.38, -1406.9, 32.06,142.78), taken = false, model = -1004440924},
+        [7] = {coords = vector4(372.98, -1409.09, 32.06,142.78), taken = false, model = -1004440924},
 	    --- paleto
 	    [9] = {coords = vector4(-252.43, 6312.25, 32.34, 313.48), taken = false, model = 2117668672},
         [10] = {coords = vector4(-247.04, 6317.95, 32.34, 134.64), taken = false, model = 2117668672},
@@ -103,7 +102,6 @@ Config.Items = { -- Grade is key, don't add same item in multiple grades. Higher
         {name = "painkillers",             price = 0, amount = 50, info = {}, type = "item"},
         {name = "firstaid",                price = 0, amount = 50, info = {}, type = "item"},
         {name = "weapon_flashlight",       price = 0, amount = 50, info = {}, type = "item"},
-        {name = "weapon_fireextinguisher", price = 0, amount = 50, info = {}, type = "item"},
     }
 }
 
