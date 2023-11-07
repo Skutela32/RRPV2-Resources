@@ -1,6 +1,6 @@
 name "Jim-Mechanic"
 author "Jimathy"
-version "3.2"
+version "3.2.1"
 description "Mechanic Script By Jimathy"
 fx_version "cerulean"
 game "gta5"
