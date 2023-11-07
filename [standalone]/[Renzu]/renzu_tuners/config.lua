@@ -263,7 +263,7 @@ GetEngineLocals = function()
 		local local_engines = exports.renzu_engine:Engines().Locals
 		for k,v in pairs(local_engines) do
 			if v.model then
-				table.insert(engines,{label = v.name, name = v.model, requires = {steel = 5,aluminum = 5,iron = 5, copper = 5}}) -- requirements for Local Engines Crafting
+				table.insert(engines,{label = v.name, name = v.model, requires = {steel = 100,aluminum = 125,iron = 200, copper = 175}}) -- requirements for Local Engines Crafting
 			end
 		end
 	end
@@ -275,7 +275,7 @@ GetEngineCustoms = function()
 	if GetResourceState('renzu_engine') == 'started' then
 		local custom_engines = exports.renzu_engine:Engines().Custom
 		for k,v in pairs(custom_engines) do
-			table.insert(engines,{label = v.label, name = v.soundname, requires = {steel = 25,aluminum = 25,iron = 25, copper = 25}}) -- requirements for Custom Engines Crafting
+			table.insert(engines,{label = v.label, name = v.soundname, requires = {steel = 150,aluminum = 150,iron = 250, copper = 200}}) -- requirements for Custom Engines Crafting
 		end
 	end
 	return engines
@@ -292,7 +292,7 @@ end
 GetCraftableParts = function()
 	local parts = {}
 	for k,v in pairs(config.engineparts) do
-		table.insert(parts,{label = v.label, name = v.item, requires = {steel = 5,aluminum = 5,iron = 5, copper = 5}}) -- requirements for OEM Parts Crafting
+		table.insert(parts,{label = v.label, name = v.item, requires = {steel = 10,aluminum = 10,iron = 10, copper = 10}}) -- requirements for OEM Parts Crafting
 	end
 	return parts
 end

@@ -27,16 +27,16 @@ Config.custom_engine = { -- advanced usage, Custom Engine, customsounds, custom 
 
 	[`b16b`] = {custom = true, turboinstall = false, handlingName = 'b16b', label = '2.0L Inline 4', soundname = 'ruston', fMass = '800.000000', nInitialDriveGears = 5, fInitialDriveForce = 0.425000, fDriveInertia = 1.200000, fClutchChangeRateScaleUpShift = 8.200000, fClutchChangeRateScaleDownShift = 8.200000, fInitialDriveMaxFlatVel = 148.000000, price = 100000,},
 	[`rb26dett`] = {custom = true, turboinstall = true, handlingName = 'rb26dett', label = '2.8L Twin Turbo Inline 6', soundname = 'elegyx', fMass = '1500.000000', nInitialDriveGears = 6, fInitialDriveForce = 0.525000, fDriveInertia = 1.120000, fClutchChangeRateScaleUpShift = 7.200000, fClutchChangeRateScaleDownShift = 7.200000, fInitialDriveMaxFlatVel = 198.000000, price = 100000,},
-	[`supra2jzgtett`] = {custom = true, turboinstall = true, handlingName = 'supra2jzgtett', label = '2.9L Inline 6', soundname = 'toysupmk4', fMass = '1600.000000', nInitialDriveGears = 5, fInitialDriveForce = 0.475000, fDriveInertia = 0.950000, fClutchChangeRateScaleUpShift = 7.400000, fClutchChangeRateScaleDownShift = 7.500000, fInitialDriveMaxFlatVel = 189.000000, price = 100000,},
-	[`rx713b`] = {custom = true, turboinstall = true, handlingName = 'rx713b', label = '2 Rotor', soundname = 'rotary7', fMass = '1340.000000', nInitialDriveGears = 5, fInitialDriveForce = 0.425000, fDriveInertia = 1.090000, fClutchChangeRateScaleUpShift = 7.700000, fClutchChangeRateScaleDownShift = 7.100000, fInitialDriveMaxFlatVel = 182.000000, price = 100000,},
+	[`supra2jzgtett`] = {custom = true, turboinstall = false, handlingName = 'supra2jzgtett', label = '2.9L Inline 6', soundname = 'toysupmk4', fMass = '1600.000000', nInitialDriveGears = 5, fInitialDriveForce = 0.475000, fDriveInertia = 0.950000, fClutchChangeRateScaleUpShift = 7.400000, fClutchChangeRateScaleDownShift = 7.500000, fInitialDriveMaxFlatVel = 189.000000, price = 100000,},
+	[`rx713b`] = {custom = true, turboinstall = false, handlingName = 'rx713b', label = '2 Rotor', soundname = 'rotary7', fMass = '1340.000000', nInitialDriveGears = 5, fInitialDriveForce = 0.425000, fDriveInertia = 1.090000, fClutchChangeRateScaleUpShift = 7.700000, fClutchChangeRateScaleDownShift = 7.100000, fInitialDriveMaxFlatVel = 182.000000, price = 100000,},
 
 	-- BELOW is custom added, the handling is set to default, you may want to customized the handling
 	-- BELOW is custom added, the handling is set to default, you may want to customized the handling
 	-- BELOW is custom added, the handling is set to default, you may want to customized the handling
 	[`musv8`] = { 
-		nInitialDriveGears = 5, fInitialDriveForce = 0.425000, fDriveInertia = 1.200000, fClutchChangeRateScaleUpShift = 8.200000, fClutchChangeRateScaleDownShift = 8.200000, fInitialDriveMaxFlatVel = 168.000000, fMass = '1400.000000',
+		nInitialDriveGears = 6, fInitialDriveForce = 0.425000, fDriveInertia = 1.200000, fClutchChangeRateScaleUpShift = 8.200000, fClutchChangeRateScaleDownShift = 8.200000, fInitialDriveMaxFlatVel = 180.000000, fMass = '1800.000000',
 		custom = true, -- DECLARE AS CUSTOM ENGINE
-		turboinstall = true, -- this engine has a default turbo install?
+		turboinstall = false, -- this engine has a default turbo install?
 		handlingName = 'musv8',  -- sound name
 		label = '5.0L V8', -- ITEM LABEL
 		soundname = 'musv8',  -- sound name

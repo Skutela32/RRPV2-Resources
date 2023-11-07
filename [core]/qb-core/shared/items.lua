@@ -1625,5 +1625,4 @@ ultimate_block = {
 	label = "Sulfur",
 	useable = "true",
   },
-
 }

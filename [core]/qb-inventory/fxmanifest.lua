@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
-lua54 'yes'
-description 'QB-Inventory'
+
+description 'QB-Inventory Re-Design'
 version '1.2.4'
 
 shared_scripts {
@@ -34,3 +34,5 @@ files {
 }
 
 dependency 'qb-weapons'
+
+lua54 'yes'
