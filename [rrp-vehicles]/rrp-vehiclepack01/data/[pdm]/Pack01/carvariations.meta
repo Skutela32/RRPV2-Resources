@@ -50,13 +50,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="49382"/>
+      <sirenSettings value="0"/>
     </Item>
 	<Item> 
       <modelName>policeb</modelName>
@@ -107,13 +107,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="754859"/>
+      <sirenSettings value="0"/>
     </Item>
 	<Item> 
       <modelName>civcap</modelName>
@@ -164,13 +164,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="768459"/>
+      <sirenSettings value="0"/>
     </Item>
 	<Item> 
       <modelName>civram</modelName>
@@ -221,13 +221,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="47859"/>
+      <sirenSettings value="0"/>
     </Item>
     <Item> 
       <modelName>civvet</modelName>
@@ -278,13 +278,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="78456"/>
+      <sirenSettings value="0"/>
     </Item>
     <Item> 
       <modelName>civvic</modelName>
@@ -335,13 +335,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="859985"/>
+      <sirenSettings value="0"/>
     </Item>
     <Item> 
       <modelName>civ15exp</modelName>
@@ -392,13 +392,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="953216"/>
+      <sirenSettings value="0"/>
     </Item>
     <Item> 
       <modelName>civ10char</modelName>
@@ -449,13 +449,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="94658"/>
+      <sirenSettings value="0"/>
     </Item>
     <Item> 
       <modelName>civ14char</modelName>
@@ -506,13 +506,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="85685"/>
+      <sirenSettings value="0"/>
     </Item>
     <Item> 
       <modelName>civdur</modelName>
@@ -563,13 +563,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="85685"/>
+      <sirenSettings value="0"/>
     </Item>
     <Item> 
       <modelName>civ16exp</modelName>
@@ -620,13 +620,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="85685"/>
+      <sirenSettings value="0"/>
     </Item>
     <Item> 
       <modelName>civ16expk9</modelName>
@@ -677,13 +677,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="85685"/>
+      <sirenSettings value="0"/>
     </Item>
     <Item> 
       <modelName>civ20exp</modelName>
@@ -734,13 +734,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="85685"/>
+      <sirenSettings value="0"/>
     </Item>
      <Item> 
       <modelName>civ21f150</modelName>
@@ -791,13 +791,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="985689"/>
+      <sirenSettings value="0"/>
     </Item>
     <Item> 
       <modelName>civdur</modelName>
@@ -848,13 +848,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="85685"/>
+      <sirenSettings value="0"/>
     </Item>
     <Item> 
       <modelName>civ18tahoe</modelName>
@@ -905,13 +905,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="85685"/>
+      <sirenSettings value="0"/>
     </Item>
     <Item> 
       <modelName>civ18tahoek9</modelName>
@@ -962,13 +962,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="85686"/>
+      <sirenSettings value="0"/>
     </Item>
     <Item> 
       <modelName>civtaur</modelName>
@@ -1019,13 +1019,13 @@
       <plateProbabilities>
         <Probabilities>
           <Item>
-            <Name>Police guv plate</Name>
+            <Name>Standard White</Name>
             <Value value="100"/>
           </Item>
         </Probabilities>
       </plateProbabilities>
       <lightSettings value="1"/>
-      <sirenSettings value="85685"/>
+      <sirenSettings value="0"/>
     </Item>
   </variationData>
 </CVehicleModelInfoVariation>
