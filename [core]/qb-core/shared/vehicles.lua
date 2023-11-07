@@ -577,6 +577,22 @@ local Vehicles = {
 	{['model'] = 'stratum',       ['name'] = 'Stratum',                       ['brand'] = 'Zirconium',       ['price'] = 15000,   ['category'] = 'Zirconium', 	['categoryLabel'] = 'Zirconium',       ['shop'] = 'pdm'},
     {['model'] = 'journey',       ['name'] = 'Journey',                       ['brand'] = 'Zirconium',       ['price'] = 6500,    ['category'] = 'Zirconium', 	['categoryLabel'] = 'Zirconium',       ['shop'] = 'pdm'},
     
+    ---------
+    -- PDM --
+    ---------
+    {['model'] = 'civ10char',    ['name'] = '2010 Buffalo',                  ['brand'] = 'Bravado',         ['price'] = 6500,    ['category'] = 'Bravado', 	['categoryLabel'] = 'Bravado',          ['shop'] = 'pdm'},
+    {['model'] = 'civ14char',    ['name'] = '2014 Buffalo',                  ['brand'] = 'Bravado',         ['price'] = 6500,    ['category'] = 'Bravado', 	['categoryLabel'] = 'Bravado',          ['shop'] = 'pdm'},
+    {['model'] = 'civ15exp',     ['name'] = '2015 Radius',                   ['brand'] = 'Vapid',           ['price'] = 6500,    ['category'] = 'Vapid', 	    ['categoryLabel'] = 'Vapid',            ['shop'] = 'pdm'},
+    {['model'] = 'civ16exp',     ['name'] = '2016 Radius',                   ['brand'] = 'Vapid',           ['price'] = 6500,    ['category'] = 'Vapid', 	    ['categoryLabel'] = 'Vapid',            ['shop'] = 'pdm'},
+    {['model'] = 'civ18char',    ['name'] = '2018 Buffalo',                  ['brand'] = 'Bravado',         ['price'] = 6500,    ['category'] = 'Bravado', 	['categoryLabel'] = 'Bravado',          ['shop'] = 'pdm'},
+    {['model'] = 'civ18tahoe',   ['name'] = '2018 Granger',                  ['brand'] = 'Declasse',        ['price'] = 6500,    ['category'] = 'Declasse', 	['categoryLabel'] = 'Declasse',         ['shop'] = 'pdm'},
+    {['model'] = 'civ20exp',     ['name'] = '2020 Radius',                   ['brand'] = 'Vapid',           ['price'] = 6500,    ['category'] = 'Vapid', 	    ['categoryLabel'] = 'Vapid',            ['shop'] = 'pdm'},
+    {['model'] = 'civ21f150',    ['name'] = 'Caracara F-150',                ['brand'] = 'Vapid',           ['price'] = 6500,    ['category'] = 'Vapid', 	    ['categoryLabel'] = 'Vapid',            ['shop'] = 'pdm'},
+    {['model'] = 'civdur',       ['name'] = 'Gresley',                       ['brand'] = 'Bravado',         ['price'] = 6500,    ['category'] = 'Bravado', 	['categoryLabel'] = 'Bravado',          ['shop'] = 'pdm'},
+    {['model'] = 'civtaur',      ['name'] = 'Tourer',                        ['brand'] = 'Vapid',           ['price'] = 6500,    ['category'] = 'Vapid', 	    ['categoryLabel'] = 'Vapid',            ['shop'] = 'pdm'},
+    {['model'] = 'civvet',       ['name'] = 'Coquette',                      ['brand'] = 'Invetero',        ['price'] = 6500,    ['category'] = 'Invetero', 	['categoryLabel'] = 'Invetero',         ['shop'] = 'pdm'},
+    
+
     -- 
     -- POLICE
     -- 
@@ -590,10 +606,8 @@ local Vehicles = {
     {['model'] = 'lspd21f150',    ['name'] = 'lspd21f150',                    ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
     {['model'] = 'lspdcap',       ['name'] = 'lspdcap',                       ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
     {['model'] = 'lspddur',       ['name'] = 'lspddur',                       ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
-    {['model'] = 'lspdram',       ['name'] = 'lspdram',                       ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
     {['model'] = 'lspdtaur',      ['name'] = 'lspdtaur',                      ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
     {['model'] = 'lspdvet',       ['name'] = 'lspdvet',                       ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
-    {['model'] = 'lspdvic',       ['name'] = 'lspdvic',                       ['brand'] = 'Police',       ['price'] = 6500,    ['category'] = 'Police', 	['categoryLabel'] = 'Police',       ['shop'] = 'Police'},
     
 
 

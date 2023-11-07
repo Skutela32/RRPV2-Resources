@@ -6,7 +6,7 @@
     <Item>
       <modelName>lspd10char</modelName>
       <txdName>lspd10char</txdName>
-      <handlingId>BUFFALO2</handlingId>
+      <handlingId>lspd10char</handlingId>
       <gameName>lspd10char</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -266,7 +266,7 @@
 	<Item>
       <modelName>lspd18char</modelName>
       <txdName>lspd18char</txdName>
-      <handlingId>BUFFALO2</handlingId>
+      <handlingId>lspd18char</handlingId>
       <gameName>lspd18char</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -396,7 +396,7 @@
 	<Item>
       <modelName>lspdcap</modelName>
       <txdName>lspdcap</txdName>
-      <handlingId>BUFFALO2</handlingId>
+      <handlingId>lspdcap</handlingId>
       <gameName>lspdcap</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -526,7 +526,7 @@
 	<Item>
       <modelName>lspdram</modelName>
       <txdName>lspdram</txdName>
-      <handlingId>sandking</handlingId>
+      <handlingId>lspdram</handlingId>
       <gameName>lspdram</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -656,7 +656,7 @@
     <Item>
       <modelName>lspdvet</modelName>
       <txdName>lspdvet</txdName>
-      <handlingId>coquette</handlingId>
+      <handlingId>lspdvet</handlingId>
       <gameName>lspdvet</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -786,7 +786,7 @@
     <Item>
       <modelName>lspdvic</modelName>
       <txdName>lspdvic</txdName>
-      <handlingId>BUFFALO2</handlingId>
+      <handlingId>lspdvic</handlingId>
       <gameName>lspdvic</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -916,7 +916,7 @@
     <Item>
       <modelName>lspd14char</modelName>
       <txdName>lspd14char</txdName>
-      <handlingId>BUFFALO2</handlingId>
+      <handlingId>lspd14char</handlingId>
       <gameName>lspd14char</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1046,7 +1046,7 @@
     <Item>
       <modelName>lspd21f150</modelName>
       <txdName>lspd21f150</txdName>
-      <handlingId>sandking</handlingId>
+      <handlingId>lspd21f150</handlingId>
       <gameName>lspd21f150</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1176,7 +1176,7 @@
     <Item>
       <modelName>lspd16exp</modelName>
       <txdName>lspd16exp</txdName>
-      <handlingId>police3</handlingId>
+      <handlingId>lspd16exp</handlingId>
       <gameName>lspd16exp</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1306,7 +1306,7 @@
     <Item>
       <modelName>lspd15exp</modelName>
       <txdName>lspd15exp</txdName>
-      <handlingId>police3</handlingId>
+      <handlingId>lspd15exp</handlingId>
       <gameName>lspd15exp</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1436,7 +1436,7 @@
      <Item>
       <modelName>lspd16expk9</modelName>
       <txdName>lspd16expk9</txdName>
-      <handlingId>police3</handlingId>
+      <handlingId>lspd16expk9</handlingId>
       <gameName>lspd16expk9</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1566,7 +1566,7 @@
     <Item>
       <modelName>lspd20exp</modelName>
       <txdName>lspd20exp</txdName>
-      <handlingId>police3</handlingId>
+      <handlingId>lspd20exp</handlingId>
       <gameName>lspd20exp</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1696,7 +1696,7 @@
     <Item>
       <modelName>lspddur</modelName>
       <txdName>lspddur</txdName>
-      <handlingId>police3</handlingId>
+      <handlingId>lspddur</handlingId>
       <gameName>lspddur</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1826,7 +1826,7 @@
     <Item>
       <modelName>lspd18tahoe</modelName>
       <txdName>lspd18tahoe</txdName>
-      <handlingId>sheriff2</handlingId>
+      <handlingId>lspd18tahoe</handlingId>
       <gameName>lspd18tahoe</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1956,7 +1956,7 @@
      <Item>
       <modelName>lspd18tahoek9</modelName>
       <txdName>lspd18tahoek9</txdName>
-      <handlingId>sheriff2</handlingId>
+      <handlingId>lspd18tahoek9</handlingId>
       <gameName>lspd18tahoek9</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -2086,7 +2086,7 @@
     <Item>
       <modelName>lspdtaur</modelName>
       <txdName>lspdtaur</txdName>
-      <handlingId>police2</handlingId>
+      <handlingId>lspdtaur</handlingId>
       <gameName>lspdtaur</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
