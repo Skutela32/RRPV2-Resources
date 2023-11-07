@@ -206,7 +206,7 @@ Config.PhoneApplications = {
         slot = 13,
         Alerts = 0,
     },
-    ["crypto"] = {
+    --[[["crypto"] = {
         app = "crypto",
         color = "#000000",
         color2 = "#000000",
@@ -217,8 +217,8 @@ Config.PhoneApplications = {
         blockedjobs = {},
         slot = 14,
         Alerts = 0,
-    },
-    ["job"] = {
+    },]]
+    --[[["job"] = {
         app = "job",
         color = "#151515",
         color2 = "#161616",
@@ -229,8 +229,8 @@ Config.PhoneApplications = {
         blockedjobs = {},
         slot = 15,
         Alerts = 0,
-    },
-    ["jobcenter"] = {
+    },]]
+    --[[["jobcenter"] = {
         app = "jobcenter",
         color = "#151515",
         color2 = "#161616",
@@ -241,7 +241,7 @@ Config.PhoneApplications = {
         blockedjobs = {},
         slot = 16,
         Alerts = 0,
-    },
+    },]]
     ["employment"] = {
         app = "employment",
         color = "#009ee5",
@@ -250,10 +250,10 @@ Config.PhoneApplications = {
         tooltipText = "Employment",
         job = false,
         blockedjobs = {},
-        slot = 17,
+        slot = 14,
         Alerts = 0,
     },
-    ["lsbn"] = {
+    --[[["lsbn"] = {
         app = "lsbn",
         color = "#151515",
         color2 = "#161616",
@@ -263,7 +263,7 @@ Config.PhoneApplications = {
         blockedjobs = {},
         slot = 18,
         Alerts = 0,
-    },
+    },]]
     ["taxi"] = {
         app = "taxi",
         color = "#c6c900",
@@ -274,10 +274,10 @@ Config.PhoneApplications = {
         style = "font-size: 3vh";
         job = false,
         blockedjobs = {},
-        slot = 19,
+        slot = 15,
         Alerts = 0,
     },
-    ["casino"] = {
+    --[[["casino"] = {
         app = "casino",
         color = "#000100",
         color2 = "#000100",
@@ -289,7 +289,7 @@ Config.PhoneApplications = {
         blockedjobs = {},
         slot = 20,
         Alerts = 0,
-    },
+    },]]
     ["calculator"] = {
         app = "calculator",
         color = "#c94001",
@@ -300,7 +300,7 @@ Config.PhoneApplications = {
         style = "font-size: 2.5vh";
         job = false,
         blockedjobs = {},
-        slot = 21,
+        slot = 16,
         Alerts = 0,
     },
     ["gallery"] = {
@@ -313,7 +313,7 @@ Config.PhoneApplications = {
         style = "font-size: 2.7vh";
         job = false,
         blockedjobs = {},
-        slot = 22,
+        slot = 17,
         Alerts = 0,
     },
     ["racing"] = {
@@ -325,7 +325,7 @@ Config.PhoneApplications = {
         style = "font-size: 3vh";
         job = false,
         blockedjobs = {},
-        slot = 23,
+        slot = 18,
         Alerts = 0,
     },
     ["bank"] = {
@@ -337,7 +337,7 @@ Config.PhoneApplications = {
         style = "font-size: 2.7vh";
         job = false,
         blockedjobs = {},
-        slot = 24,
+        slot = 19,
         Alerts = 0,
     },
     ["gopro"] = {
@@ -350,7 +350,7 @@ Config.PhoneApplications = {
         style = "padding-right: .08vh; font-size: 3.3vh";
         job = false,
         blockedjobs = {},
-        slot = 25,
+        slot = 20,
         Alerts = 0,
     },
     ["group-chats"] = {
@@ -363,7 +363,7 @@ Config.PhoneApplications = {
         style = "padding-right: .08vh; font-size: 3.3vh";
         job = false,
         blockedjobs = {},
-        slot = 26,
+        slot = 21,
         Alerts = 0,
     },
 }

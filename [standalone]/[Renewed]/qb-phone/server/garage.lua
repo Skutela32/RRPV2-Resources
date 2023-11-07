@@ -60,11 +60,11 @@ lib.callback.register('qb-phone:server:GetGarageVehicles', function(source)
                 end
             end
 
-            local VehicleState = "In"
+            local VehicleState = ""
             if v.state == 0 then
-                VehicleState = "Out"
+                VehicleState = ""
             elseif v.state == 2 then
-                VehicleState = "Impounded"
+                VehicleState = ""
             end
 
             if VehicleData["brand"] then
