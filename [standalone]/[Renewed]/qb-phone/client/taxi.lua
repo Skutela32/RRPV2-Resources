@@ -1,7 +1,17 @@
-local QBCore = exports['qb-core']:GetCoreObject()
-
 RegisterNUICallback('GetAvailableTaxiDrivers', function(_, cb)
-    QBCore.Functions.TriggerCallback('qb-phone:server:GetAvailableTaxiDrivers', function(drivers)
-        cb(drivers)
-    end)
+    local drivers = lib.callback.await('qb-phone:server:GetAvailableTaxiDrivers', false)
+    cb(drivers)
+end)
+
+RegisterNetEvent('qb-phone:OpenAvailableTaxi', function()
+    local taxiMenu = {}
+
+    -- TO BE WRITTEN
+
+    lib.registerContext({
+        id = 'taxi_call_menu',
+        title = 'Available Taxis',
+        options = taxiMenu
+    })
+    lib.showContext('taxi_call_menu')
 end)

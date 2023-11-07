@@ -79,10 +79,10 @@ function AddDocuments(data){
     DocEndcitizenid = null
 
     for (const [k, v] of Object.entries(data)) {
-        var firstLetter = v.title.substring(0, 1);  
+        var firstLetter = v.title.substring(0, 1);
         var Fulltext = firstLetter.toUpperCase()+(v.title).replace(firstLetter,'')
-        
-        var AddOption = '<div class="documents-test">' + 
+
+        var AddOption = '<div class="documents-test">' +
             '<div class="documents-title-title">'+Fulltext+'</div>' +
             '<div class="documents-title-icon" data-title="'+v.title+'" data-text="'+v.text+'" data-id="'+v.id+'" data-csn="'+v.citizenid+'"><i class="fas fa-eye"></i></div>'+
         '</div>';
@@ -93,9 +93,12 @@ function AddDocuments(data){
 
 function LoadGetNotes(){
     $(".documents-dropdown-menu").html("");
-    var Shitter = '<li id="documents-docs" data-title="Documents">Documents' +
+    var Shitter = '<li id="documents-notes" data-title="Notes">Notes</li>' +
         '<li id="documents-licenses" data-title="Licenses">Licenses</li>' +
+        '<li id="documents-docs" data-title="Documents">Documents</li>' +
         '<li id="documents-vehicle" data-title="Vehicle">Vehicle Registrations</li>' +
+        '<li id="documents-housing" data-title="Housing">Housing Registrations</li>' +
+        '<li id="documents-contracts" data-title="Contracts">Contracts</li>' +
     '</li>';
 
     $('.documents-dropdown-menu').append(Shitter);
@@ -119,7 +122,7 @@ function SendDocument(title, text){
     DocEndcitizenid = $(this).data('csn')
 
     var AddOption = `
-    <div class="document-body-class-body-main">'+
+    <div class="document-body-class-body-main">
         <div id="documents-textarea-new" spellcheck="false" required placeholder="Text" maxlength="4000">${DocEndtext}</div>
     </div>`;
 
@@ -137,6 +140,34 @@ function SendDocument(title, text){
 
 // Clicks
 
+$(document).on('click', '#documents-notes', function(e) {
+    QB.Phone.Notifications.Add("fas fa-triange-exclamation", "Documents", "This feature is still unavailable", "rgb(255, 165, 0)", 1250);
+})
+
+$(document).on('click', '#documents-housing', function(e) {
+    QB.Phone.Notifications.Add("fas fa-triange-exclamation", "Documents", "This feature is still unavailable", "rgb(255, 165, 0)", 1250);
+    /*
+    $(this).parents('.documents-dropdown').find('span').text($(this).text());
+    $(this).parents('.documents-dropdown').find('input').attr('value', $(this).attr('id'));
+    $.post('https://qb-phone/SetupHousingDocuments', JSON.stringify({}), function(Houses){
+        if (Houses != null) {
+            $.each(Houses, function(i, vehicle){
+                var firstLetter = houses.fullname.substring(0, 1);
+                var Fulltext = firstLetter.toUpperCase()+(houses.fullname).replace(firstLetter,'')
+            })
+        } else {
+            var AddOption = '<div class="casino-text-clear">Nothing Here!</div>'+
+            '<div class="casino-text-clear" style="font-size: 500%;color: #0d1218c0;"><i class="fas fa-frown"></i></div>'
+        $('.documents-list').append(AddOption);
+        }
+    })
+    */
+})
+
+$(document).on('click', '#documents-contracts', function(e) {
+    QB.Phone.Notifications.Add("fas fa-triange-exclamation", "Documents", "This feature is still unavailable", "rgb(255, 165, 0)", 1250);
+})
+
 $(document).on('click', '#documents-docs', function(e) {
     $(this).parents('.documents-dropdown').find('span').text($(this).text());
     $(this).parents('.documents-dropdown').find('input').attr('value', $(this).attr('id'));
@@ -150,22 +181,22 @@ $(document).on('click', '#documents-vehicle', function(e) {
     $.post('https://qb-phone/SetupGarageVehicles', JSON.stringify({}), function(Vehicles){
         if(Vehicles != null){
             $.each(Vehicles, function(i, vehicle){
-                if (vehicle.vinscratched != 'false'){
+                if (vehicle.vinscratch != 0){
                         DocEndtitle = null
                         DocEndtext = null
                         DocEndid = null
                         DocEndcitizenid = null
-        
-                        var firstLetter = vehicle.fullname.substring(0, 1);  
+
+                        var firstLetter = vehicle.fullname.substring(0, 1);
                         var Fulltext = firstLetter.toUpperCase()+(vehicle.fullname).replace(firstLetter,'')
                         var FirstName = QB.Phone.Data.PlayerData.charinfo.firstname;
                         var LastName = QB.Phone.Data.PlayerData.charinfo.lastname;
-                
-                        var AddOption = '<div class="documents-test">' + 
+
+                        var AddOption = '<div class="documents-test">' +
                             '<div class="documents-title-title">'+Fulltext+'</div>' +
                             '<div class="documents-title-icon-registration" data-title="'+vehicle.fullname+'" data-text="<b><center><u>San Andreas DMV</u></b></center><p><p><b>Name: </b>'+vehicle.brand+'</p></p><p><b>Model: </b>'+vehicle.model+'</p><p><b>Plate: </b>'+vehicle.plate+'</p><p><b>Owner: </b>'+FirstName+' '+LastName+'</p><p><b><center>Official State Document Of San Andreas</p></b></center>"><i class="fas fa-eye"></i></div>'+
                         '</div>';
-                
+
                         $('.documents-list').append(AddOption);
                     }
             });
@@ -196,15 +227,15 @@ $(document).on('click', '#documents-licenses', function(e) {
     if (PlayerLicenses){
         for (const [k, v] of Object.entries(PlayerLicenses)) {
             if (v){
-                var firstLetter = k.substring(0, 1);  
+                var firstLetter = k.substring(0, 1);
                 var Fulltext = firstLetter.toUpperCase()+k.replace(firstLetter,'')+" License"
-        
+
                 var AddOption = `
                 <div class="documents-test">
                     <div class="documents-title-title">${Fulltext}</div>
                     <div class="documents-title-icon-registration" data-title=${Fulltext} data-text="<b><u>Issued To</u></b><p><p><b>Name: </b>${FirstName} ${LastName}</p></p></b><p><b>ID: </b>${StateId}</p></b><p><b>Sex: </b>${label}</p></b><p><b><u>Issued By</u></b></p><p><b>Name: </b>State Account</p><p><b><center>Official Document Of San Andreas</p></b></center>"><i class="fas fa-eye"></i></div>
                 </div>`
-        
+
                 $('.documents-list').append(AddOption);
             }
         }
