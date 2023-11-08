@@ -95,7 +95,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_MUSCLE</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -225,7 +225,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_SPORT</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -355,7 +355,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_MUSCLE</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -485,7 +485,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_SEDAN</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -615,7 +615,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_OFF_ROAD</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -745,7 +745,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_SPORT</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -875,7 +875,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_SEDAN</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -1005,7 +1005,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_MUSCLE</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -1135,7 +1135,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_OFF_ROAD</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -1265,7 +1265,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_SUV</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -1395,7 +1395,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_SUV</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -1525,7 +1525,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_SUV</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -1655,7 +1655,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_SUV</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -1785,7 +1785,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_SUV</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -1915,7 +1915,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_OFF_ROAD</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -2045,7 +2045,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_SUV</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
@@ -2175,7 +2175,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
 	  <dashboardType>VDT_GENTAXI</dashboardType>
-      <vehicleClass>VC_EMERGENCY</vehicleClass>
+      <vehicleClass>VC_SEDAN</vehicleClass>
       <wheelType>VWT_MUSCLE</wheelType>
       <trailers />
       <additionalTrailers />
