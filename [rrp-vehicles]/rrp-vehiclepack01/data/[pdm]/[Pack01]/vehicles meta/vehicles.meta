@@ -6,7 +6,7 @@
     <Item>
       <modelName>civ10char</modelName>
       <txdName>civ10char</txdName>
-      <handlingId>civ10char</handlingId>
+      <handlingId>BUFFALO2</handlingId>
       <gameName>civ10char</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -266,7 +266,7 @@
 	<Item>
       <modelName>civ18char</modelName>
       <txdName>civ18char</txdName>
-      <handlingId>civ18char</handlingId>
+      <handlingId>BUFFALO2</handlingId>
       <gameName>civ18char</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -396,7 +396,7 @@
 	<Item>
       <modelName>civcap</modelName>
       <txdName>civcap</txdName>
-      <handlingId>civcap</handlingId>
+      <handlingId>BUFFALO2</handlingId>
       <gameName>civcap</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -526,7 +526,7 @@
 	<Item>
       <modelName>civram</modelName>
       <txdName>civram</txdName>
-      <handlingId>civram</handlingId>
+      <handlingId>sandking</handlingId>
       <gameName>civram</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -656,7 +656,7 @@
     <Item>
       <modelName>civvet</modelName>
       <txdName>civvet</txdName>
-      <handlingId>civvet</handlingId>
+      <handlingId>coquette</handlingId>
       <gameName>civvet</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -786,7 +786,7 @@
     <Item>
       <modelName>civvic</modelName>
       <txdName>civvic</txdName>
-      <handlingId>civvic</handlingId>
+      <handlingId>BUFFALO2</handlingId>
       <gameName>civvic</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -916,7 +916,7 @@
     <Item>
       <modelName>civ14char</modelName>
       <txdName>civ14char</txdName>
-      <handlingId>civ14char</handlingId>
+      <handlingId>BUFFALO2</handlingId>
       <gameName>civ14char</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1046,7 +1046,7 @@
     <Item>
       <modelName>civ21f150</modelName>
       <txdName>civ21f150</txdName>
-      <handlingId>civ21f150</handlingId>
+      <handlingId>sandking</handlingId>
       <gameName>civ21f150</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1176,7 +1176,7 @@
     <Item>
       <modelName>civ16exp</modelName>
       <txdName>civ16exp</txdName>
-      <handlingId>civ16exp</handlingId>
+      <handlingId>police3</handlingId>
       <gameName>civ16exp</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1306,7 +1306,7 @@
     <Item>
       <modelName>civ15exp</modelName>
       <txdName>civ15exp</txdName>
-      <handlingId>civ15exp</handlingId>
+      <handlingId>police3</handlingId>
       <gameName>civ15exp</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1436,7 +1436,7 @@
      <Item>
       <modelName>civ16expk9</modelName>
       <txdName>civ16expk9</txdName>
-      <handlingId>civ16expk9</handlingId>
+      <handlingId>police3</handlingId>
       <gameName>civ16expk9</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1566,7 +1566,7 @@
     <Item>
       <modelName>civ20exp</modelName>
       <txdName>civ20exp</txdName>
-      <handlingId>civ20exp</handlingId>
+      <handlingId>police3</handlingId>
       <gameName>civ20exp</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1696,7 +1696,7 @@
     <Item>
       <modelName>civdur</modelName>
       <txdName>civdur</txdName>
-      <handlingId>civdur</handlingId>
+      <handlingId>police3</handlingId>
       <gameName>civdur</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1826,7 +1826,7 @@
     <Item>
       <modelName>civ18tahoe</modelName>
       <txdName>civ18tahoe</txdName>
-      <handlingId>civ18tahoe</handlingId>
+      <handlingId>sheriff2</handlingId>
       <gameName>civ18tahoe</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -1956,7 +1956,7 @@
      <Item>
       <modelName>civ18tahoek9</modelName>
       <txdName>civ18tahoek9</txdName>
-      <handlingId>civ18tahoek9</handlingId>
+      <handlingId>sheriff2</handlingId>
       <gameName>civ18tahoek9</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
@@ -2086,7 +2086,7 @@
     <Item>
       <modelName>civtaur</modelName>
       <txdName>civtaur</txdName>
-      <handlingId>civtaur</handlingId>
+      <handlingId>police2</handlingId>
       <gameName>civtaur</gameName>
       <vehicleMakeName />
       <expressionDictName>null</expressionDictName>
