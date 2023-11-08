@@ -590,7 +590,6 @@ local Vehicles = {
     {['model'] = 'civ21f150',    ['name'] = 'Caracara F-150',                ['brand'] = 'Vapid',           ['price'] = 6500,    ['category'] = 'Vapid', 	    ['categoryLabel'] = 'Vapid',            ['shop'] = 'pdm'},
     {['model'] = 'civdur',       ['name'] = 'Gresley',                       ['brand'] = 'Bravado',         ['price'] = 6500,    ['category'] = 'Bravado', 	['categoryLabel'] = 'Bravado',          ['shop'] = 'pdm'},
     {['model'] = 'civtaur',      ['name'] = 'Tourer',                        ['brand'] = 'Vapid',           ['price'] = 6500,    ['category'] = 'Vapid', 	    ['categoryLabel'] = 'Vapid',            ['shop'] = 'pdm'},
-    {['model'] = 'civvet',       ['name'] = 'Coquette',                      ['brand'] = 'Invetero',        ['price'] = 6500,    ['category'] = 'Invetero', 	['categoryLabel'] = 'Invetero',         ['shop'] = 'pdm'},
     
 
     -- 
