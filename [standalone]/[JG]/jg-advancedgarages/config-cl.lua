@@ -22,7 +22,7 @@ RegisterNetEvent("jg-advancedgarages:client:TakeOutVehicle:config", function(veh
   -- vehicle: Vehicle FiveM native data
   -- vehicleDbData: The row of the owned vehicle from the datbase
   -- type: is either "public", "gang" or "job"
-	exports.nakres_lightbar:loadLightbarInCar(vehicle);
+	
   -- Code placed in here will be run after a vehicle has been taken out of a garage
 end)
 
