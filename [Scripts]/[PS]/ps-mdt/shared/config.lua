@@ -14,57 +14,32 @@ Config.BillVariation = true
 
 -- If set to false (default) = The fine amount is just being removed from the player's bank account
 -- If set to true = The fine amount is beeing added to the society account after being removed from the player's bank account
-Config.QBManagementUse = false
+Config.QBManagementUse = true
 
 -- Set up your inventory to automatically retrieve images when a weapon is registered at a weapon shop or self-registered.
 -- If you're utilizing lj-inventory's latest version from GitHub, no further modifications are necessary. 
 -- However, if you're using a different inventory system, please refer to the "Inventory Edit | Automatic Add Weapons with images" section in ps-mdt's README.
-Config.InventoryForWeaponsImages = "lj-inventory"
+Config.InventoryForWeaponsImages = "qb-inventory"
 
 -- "LegacyFuel", "lj-fuel", "ps-fuel"
-Config.Fuel = "ps-fuel"
+Config.Fuel = "cdn-fuel"
 
 -- Google Docs Link
 Config.sopLink = {
     ['police'] = '',
-    ['ambulance'] = '',
-    ['bcso'] = '',
-    ['doj'] = '',
-    ['sast'] = '',
-    ['sasp'] = '',
-    ['doc'] = '',
-    ['lssd'] = '',
-    ['sapr'] = '',
 }
 
 -- Google Docs Link
 Config.RosterLink = {
     ['police'] = '',
-    ['ambulance'] = '',
-    ['bcso'] = '',
-    ['doj'] = '',
-    ['sast'] = '',
-    ['sasp'] = '',
-    ['doc'] = '',
-    ['lssd'] = '',
-    ['sapr'] = '',	
 }
 
 Config.PoliceJobs = {
-    ['police'] = true,
-    ['lspd'] = true,
-    ['bcso'] = true,
-    ['sast'] = true,
-    ['sasp'] = true,
-    ['doc'] = true,
-    ['lssd'] = true,
-    ['sapr'] = true,
-    ['pa'] = true
+    ['police'] = true
 }
 
 Config.AmbulanceJobs = {
-    ['ambulance'] = true,
-    ['doctor'] = true
+    ['ambulance'] = true
 }
 
 Config.DojJobs = {

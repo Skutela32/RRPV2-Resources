@@ -6,21 +6,35 @@ const load = Vue.createApp({
     setup () {
         // Set the initial slide based on the random selection
     const randomSlideIndex = Math.floor(Math.random() * 5) + 1; // Assuming you have 5 slides
-    const initialSlide = ref(randomSlideIndex);
-    return {
-        firstslide: ref(initialSlide.value),
-      CarouselText1: 'Want to join our discord? discord.gg/Mw8ss32p3r',
-      CarouselSubText1: 'Photo captured by: Luke',
-      CarouselText2: 'Struggling to start? either do /guidebook or check your inventory with Button "TAB"',
-      CarouselSubText2: 'Photo captured by: skutela12',
-      CarouselText3: 'Want a place to call home? look no further!',
-      CarouselSubText3: 'Photo captured by: gmartinez',
-      CarouselText4: 'We are always looking for people to join our Whitelisted Jobs!',
-      CarouselSubText4: 'Photo captured by: Pieces',
-      CarouselText5: 'Please check the server rules through our discord before playing! discord.gg/Mw8ss32p3r',
-      CarouselSubText5: 'Photo captured by: Luke',
+    const firstslide = ref(randomSlideIndex);
 
-      firstslide: firstslide,
+    const CarouselText1 = 'Want to join our discord? discord.gg/Mw8ss32p3r';
+    const CarouselSubText1 = 'Photo captured by: Luke';
+    const CarouselText2 = 'Struggling to start? either do /guidebook or check your inventory with Button "TAB"';
+    const CarouselSubText2 = 'Photo captured by: skutela12';
+    const CarouselText3 = 'Want a place to call home? look no further!';
+    const CarouselSubText3 = 'Photo captured by: gmartinez';
+    const CarouselText4 = 'We are always looking for people to join our Whitelisted Jobs!';
+    const CarouselSubText4 = 'Photo captured by: Pieces';
+    const CarouselText5 = 'Please check the server rules through our discord before playing! discord.gg/Mw8ss32p3r';
+    const CarouselSubText5 = 'Photo captured by: Luke';
+
+    const secondap = ref(true);
+    const secondslide = ref('1');
+
+    return {
+      CarouselText1, 
+      CarouselSubText1,
+      CarouselText2, 
+      CarouselSubText2,
+      CarouselText3, 
+      CarouselSubText3,
+      CarouselText4, 
+      CarouselSubText4,
+      CarouselText5, 
+      CarouselSubText5,
+
+      firstslide,
 
       DownloadTitle: 'Initializing Real Roleplay',
       DownloadDesc: "Hold tight while we begin downloading all the resources/assets required to play on Real Roleplay. \n\nIf you require any suppot please join our discord! discord.gg/ugyn8TpUjv",
