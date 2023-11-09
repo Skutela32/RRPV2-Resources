@@ -1,7 +1,7 @@
 Config = {}
 
 Config.MinZOffset = 45 -- how far down the shell spawns
-Config.MinimumHouseRobberyPolice = 2 -- how many cops on to rob house
+Config.MinimumHouseRobberyPolice = 1 -- how many cops on to rob house
 Config.MinimumTime = 5 -- what time to start robberies
 Config.MaximumTime = 22 -- what time to end robberies
 Config.Ped = "csb_reporter"  -- what ped model

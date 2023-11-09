@@ -1011,3 +1011,19 @@ RegisterNetEvent('qb-phone:RefreshPhone', function()
         })
     end)
 end)
+
+
+-- Money Wash Noti
+RegisterNetEvent('qb-phone:client:LaunderNotify')
+AddEventHandler('qb-phone:client:LaunderNotify', function(message)
+    SendNUIMessage({
+        action = "PhoneNotification",
+        PhoneNotify = {
+            title = "Washing Machine",
+            text = "Cycle Completed",
+            icon = "fas fa-check",
+            color = "#ebc934",
+            timeout = 3500,
+        },
+    })
+end)
