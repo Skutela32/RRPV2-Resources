@@ -79,7 +79,7 @@ RegisterNetEvent('qb-multicharacter:client:closeNUIdefault', function() -- This 
     Wait(500)
     DoScreenFadeIn(250)
     TriggerEvent('qb-weathersync:client:EnableSync')
-    TriggerEvent('qb-clothes:client:CreateFirstCharacter')
+    TriggerEvent('illenium-appearance:client:CreateFirstCharacter')
 end)
 
 RegisterNetEvent('qb-multicharacter:client:closeNUI', function()
