@@ -5,19 +5,20 @@ const { ref } = Vue
 const load = Vue.createApp({
   setup () {
     return {
-      CarouselText1: 'Want to join our discord? discord.gg/Mw8ss32p3r',
-      CarouselSubText1: 'Photo captured by: Luke',
-      CarouselText2: 'Struggling to start? either do /guidebook or check your inventory with Button "TAB"',
-      CarouselSubText2: 'Photo captured by: skutela12',
-      CarouselText3: 'Want a place to call home? look no further!',
-      CarouselSubText3: 'Photo captured by: gmartinez',
-      CarouselText4: 'We are always looking for people to join our Whitelisted Jobs!',
-      CarouselSubText4: 'Photo captured by: Pieces',
-      CarouselText5: 'Please check the server rules through our discord before playing! discord.gg/Mw8ss32p3r',
-      CarouselSubText5: 'Photo captured by: Luke',
+        // Update these properties to use the shuffled images
+        CarouselText1: images[0].caption,
+        CarouselSubText1: 'Photo captured by: Luke',
+        CarouselText2: images[1].caption,
+        CarouselSubText2: 'Photo captured by: skutela12',
+        CarouselText3: images[2].caption,
+        CarouselSubText3: 'Photo captured by: gmartinez',
+        CarouselText4: images[3].caption,
+        CarouselSubText4: 'Photo captured by: Pieces',
+        CarouselText5: images[4].caption,
+        CarouselSubText5: 'Photo captured by: Luke',
 
-      DownloadTitle: 'Initializing Real Roleplay UK',
-      DownloadDesc: "Hold tight while we begin downloading all the resources/assets required to play on Real Roleplay UK. \n\nIf you require any suppot please join our discord! discord.gg/Mw8ss32p3r ",
+      DownloadTitle: 'Initializing Real Roleplay',
+      DownloadDesc: "Hold tight while we begin downloading all the resources/assets required to play on Real Roleplay. \n\nIf you require any suppot please join our discord! discord.gg/ugyn8TpUjv",
 
       SettingsTitle: 'Settings',
       AudioTrackDesc1: 'When disabled the current audio-track playing will be stopped.',
@@ -79,6 +80,33 @@ function audiotoggle() {
 // Your existing Vue.js setup and other code
 
 
+  // Shuffle Images
+const images = [
+    {
+      src: 'image1.jpg',
+      caption: 'Caption 1',
+    },
+    {
+      src: 'image2.jpg',
+      caption: 'Caption 2',
+    },
+    {
+      src: 'image3.jpg',
+      caption: 'Caption 3',
+    },
+    // Add more images and captions here
+  ];
+
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }  
+
+  shuffleArray(images);
+
+  // Shuffle Songs
 const songs = [
     '/assets/audio/song1.mp3',
     '/assets/audio/song2.mp3',
