@@ -1,15 +1,20 @@
 fx_version 'cerulean'
 game 'gta5'
 
-client_script 'client.lua'
+description 'qb-loading'
+version '1.2.0'
 
-ui_page 'html/index.html'
 
 files {
-    'index.html',
-    'style.css',
-    'script.js',
-    -- Add your image and music files here
-    'images/**',
-    'music/**'
+  'assets/**',
+  'html/*'
 }
+
+loadscreen {
+  'html/index.html'
+}
+
+loadscreen_cursor 'yes'
+loadscreen_manual_shutdown 'yes'
+
+lua54 'yes'
