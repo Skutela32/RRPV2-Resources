@@ -47,7 +47,7 @@ Config.Rewards = {
        ["cabin"] = {"drill", "diamond_ring", "goldchain", "thermite", "cryptostick", "weapon_golfclub"},
         ["kitchen"] = {"tosti", "sandwich", "goldchain"},
         ["chest"] = {"drill", "rolex", "diamond_ring", "goldchain", "thermite", "cryptostick"},
-        ["livingroom"] = {"drill", "rolex", "laptop", "goldchain", "thermite", "cryptostick", "tablet"}
+        ["livingroom"] = {"drill", "rolex", "houselaptop", "goldchain", "thermite", "cryptostick", "tablet"}
     },
 	
 }
