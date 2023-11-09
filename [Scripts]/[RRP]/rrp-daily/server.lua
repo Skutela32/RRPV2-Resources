@@ -7,8 +7,8 @@ Citizen.CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
-    exports['ghmattimysql']:ready(function()
-        exports['ghmattimysql']:execute("SELECT identifier, next_collect FROM daily_free", {}, function(data)
+    exports['oxmysql']:ready(function()
+        exports['oxmysql']:execute("SELECT identifier, next_collect FROM daily_free", {}, function(data)
             for k, v in ipairs(data) do
                 timecache[v.identifier] = v.next_collect
             end
@@ -39,7 +39,7 @@ AddEventHandler("free:updateTimeout", function()
     if timecache[identifier] then
         TriggerClientEvent("free:setTimeout", _source, timecache[identifier])
     else
-        exports['ghmattimysql']:execute('SELECT `next_collect` FROM `daily_free` WHERE `identifier`=@identifier;', {['@identifier'] = identifier}, function(collect)
+        exports['oxmysql']:execute('SELECT `next_collect` FROM `daily_free` WHERE `identifier`=@identifier;', {['@identifier'] = identifier}, function(collect)
             if collect[1] then
                 TriggerClientEvent("free:setTimeout", _source, collect[1].next_collect)
                 timecache[identifier] = collect[1].next_collect
@@ -83,13 +83,13 @@ AddEventHandler("free:collect", function(t)
             return
         end
     end
-    exports['ghmattimysql']:execute('SELECT * FROM `daily_free` WHERE `identifier`=@identifier;', {['@identifier'] = identifier}, function(collect)
+    exports['oxmysql']:execute('SELECT * FROM `daily_free` WHERE `identifier`=@identifier;', {['@identifier'] = identifier}, function(collect)
         if collect[1] then
             if collect[1].next_collect < now then
                 claimRewards(xPlayer)
                 TriggerClientEvent("esx:showNotification", _source, Config.claimed)
                 TriggerClientEvent("free:toggleFreeMenu", _source, false)
-                exports['ghmattimysql']:execute('UPDATE `daily_free` SET `next_collect`=@nextcollect,`times_collected`=@timescollected WHERE `identifier`=@identifier', {["@identifier"] = identifier, ["@nextcollect"] = nextcollect, ["@timescollected"] = collect[1].times_collected + 1}, nil)
+                exports['oxmysql']:execute('UPDATE `daily_free` SET `next_collect`=@nextcollect,`times_collected`=@timescollected WHERE `identifier`=@identifier', {["@identifier"] = identifier, ["@nextcollect"] = nextcollect, ["@timescollected"] = collect[1].times_collected + 1}, nil)
                 TriggerClientEvent("free:setTimeout", _source, nextcollect)
             else
                 TriggerClientEvent("free:setTimeout", _source, collect[1].next_collect)
@@ -100,7 +100,7 @@ AddEventHandler("free:collect", function(t)
             TriggerClientEvent("esx:showNotification", _source, Config.claimed)
             TriggerClientEvent("free:setTimeout", _source, nextcollect)
             TriggerClientEvent("free:toggleFreeMenu", _source, false)
-            exports['ghmattimysql']:execute('INSERT INTO `daily_free` (`identifier`, `next_collect`, `times_collected`) VALUES (@identifier, @nextcollect, 1);', {['@identifier'] = identifier, ['@nextcollect'] = nextcollect}, nil)
+            exports['oxmysql']:execute('INSERT INTO `daily_free` (`identifier`, `next_collect`, `times_collected`) VALUES (@identifier, @nextcollect, 1);', {['@identifier'] = identifier, ['@nextcollect'] = nextcollect}, nil)
         end
     end)
     collecting[_source] = nil
