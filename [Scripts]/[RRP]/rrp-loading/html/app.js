@@ -8,7 +8,7 @@ const load = Vue.createApp({
     const randomSlideIndex = Math.floor(Math.random() * 5) + 1; // Assuming you have 5 slides
     const initialSlide = ref(randomSlideIndex);
     return {
-            firstslide: ref(randomSlideIndex),
+        firstslide: ref(initialSlide.value),
       CarouselText1: 'Want to join our discord? discord.gg/Mw8ss32p3r',
       CarouselSubText1: 'Photo captured by: Luke',
       CarouselText2: 'Struggling to start? either do /guidebook or check your inventory with Button "TAB"',
@@ -19,6 +19,8 @@ const load = Vue.createApp({
       CarouselSubText4: 'Photo captured by: Pieces',
       CarouselText5: 'Please check the server rules through our discord before playing! discord.gg/Mw8ss32p3r',
       CarouselSubText5: 'Photo captured by: Luke',
+
+      firstslide: firstslide,
 
       DownloadTitle: 'Initializing Real Roleplay',
       DownloadDesc: "Hold tight while we begin downloading all the resources/assets required to play on Real Roleplay. \n\nIf you require any suppot please join our discord! discord.gg/ugyn8TpUjv",

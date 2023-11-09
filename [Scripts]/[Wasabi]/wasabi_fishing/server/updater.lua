@@ -19,7 +19,7 @@ if Config.checkForUpdates then
         end
     end)
 
-    CheckVersion = function(err, responseText, headers)
+    --[[CheckVersion = function(err, responseText, headers)
         local repoVersion, repoURL, repoBody = GetRepoInformations()
 
         CreateThread(function()
@@ -36,7 +36,7 @@ if Config.checkForUpdates then
                 print("^0[^2INFO^0] " .. resourceName .. " is up to date! (^2" .. curVersion .. "^0)")
             end
         end)
-    end
+    end]]
 
     GetRepoInformations = function()
         local repoVersion, repoURL, repoBody = nil, nil, nil
