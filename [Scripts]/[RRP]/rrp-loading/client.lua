@@ -2,11 +2,18 @@ local function randomizeLoadingScreen()
     local randomImage = "images/image" .. math.random(1, 3) .. ".jpg"
     local randomMusic = "music/music" .. math.random(1, 3) .. ".ogg"
 
-    SetLoadingScreen({
-        type = 4,
-        status = "Loading...",
-        text = "Please wait.",
-        background = randomImage,
+    SetLoadingPromptTextEntry("STRING")
+    AddTextComponentSubstringPlayerName("Loading...")
+    Citizen.Wait(0)
+
+    BeginTextCommandBusyspinnerOn("STRING")
+    AddTextComponentSubstringPlayerName("Please wait.")
+    EndTextCommandBusyspinnerOn(4)
+
+    NuiCreateFrame("html/index.html", "html/index.html")
+
+    SendNUIMessage({
+        image = randomImage,
         music = randomMusic,
     })
 
