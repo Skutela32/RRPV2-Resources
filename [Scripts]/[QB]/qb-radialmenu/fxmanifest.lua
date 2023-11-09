@@ -1,5 +1,3 @@
-server_script "J2MW7EI7OJZJ6.lua"
-client_script "J2MW7EI7OJZJ6.lua"
 fx_version 'cerulean'
 game 'gta5'
 
