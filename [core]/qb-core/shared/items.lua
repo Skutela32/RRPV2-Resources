@@ -591,10 +591,12 @@ QBShared.Items = {
 	['laptop_gold']                     = {['name'] = 'laptop_gold',                       	['label'] = 'Gold Laptop',              ['weight'] = 2000,         ['type'] = 'item',         ['image'] = 'laptop_gold.png',             ['unique'] = true,          ['useable'] = true,      ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Nice Looking Laptop You Got There, Dont Do Anything Illegal With It'},
     
 	-- House Robberies
-	["houselaptop"] 		 	 	 = {["name"] = "houselaptop",        		   	["label"] = "House Hacking Laptop",	 				["weight"] = 2500, 		["type"] = "item", 		["image"] = "houselaptop.png", 			["unique"] = false, 		["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
+	["houselaptop"] 		 	 	 = {["name"] = "houselaptop",        		   	["label"] = "House Hacking Laptop",	 				    ["weight"] = 2500, 		["type"] = "item", 		["image"] = "houselaptop.png", 			    ["unique"] = false, 		["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
 	["mansionlaptop"] 		 	 	 = {["name"] = "mansionlaptop",        		   	["label"] = "Mansion Hacking Laptop",	 				["weight"] = 2500, 		["type"] = "item", 		["image"] = "mansionlaptop.png", 			["unique"] = false, 		["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
 
 	-- Vape
 	['vape'] 						 = { ['name'] = 'vape', 						['label'] = 'Vape', 					['weight'] = 100, 		['type'] = 'item', 		['image'] = 'vape.png',					['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true, 	['combinable'] = nil, ['description'] = "Hmm", },
 
+    -- Casino
+    ['casino_chips'] = {['name'] = 'casino_chips', ['label'] = 'Casino Chips', ['weight'] = 0, ['type'] = 'item', ['image'] = 'casino_chips.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil, ['description'] = 'Chips For Casino Gambling'},
 }
