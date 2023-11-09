@@ -1,1 +1,0 @@
-CREATE TABLE `daily_free` ( `id` INT NOT NULL AUTO_INCREMENT , `identifier` VARCHAR(60) NOT NULL , `next_collect` INT(15) NOT NULL , `times_collected` INT NOT NULL , PRIMARY KEY (`id`));
