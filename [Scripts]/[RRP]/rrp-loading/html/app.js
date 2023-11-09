@@ -5,8 +5,9 @@ const { ref } = Vue
 const load = Vue.createApp({
     setup () {
         // Set the initial slide based on the random selection
-        const randomSlideIndex = Math.floor(Math.random() * 5) + 1; // Assuming you have 5 slides
-        return {
+    const randomSlideIndex = Math.floor(Math.random() * 5) + 1; // Assuming you have 5 slides
+    const initialSlide = ref(randomSlideIndex);
+    return {
             firstslide: ref(randomSlideIndex),
       CarouselText1: 'Want to join our discord? discord.gg/Mw8ss32p3r',
       CarouselSubText1: 'Photo captured by: Luke',
