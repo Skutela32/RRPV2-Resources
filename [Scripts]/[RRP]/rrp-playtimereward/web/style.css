@@ -33,13 +33,13 @@
 	overflow: visible;
 	width: 11.1458vw;
 	height: 19.4074vh;
-	left: 60.4688vw;
+	left: 90.4688vw;
 	top: 82.5926vh;
 }
 
 #left {
 	transform: rotate(-3deg);
-	left: 64.1592vw;
+	left: 93.6592vw;
 	top: 81.7593vh;
 	position: absolute;
 	overflow: visible;
@@ -50,12 +50,12 @@
 	font-style: normal;
 	font-weight: bold;
 	font-size: 1.8229vw;
-	color: rgba(148,149,137,1);
+	color: rgba(44,44,44,1);
 }
 
 #minutes {
 	transform: rotate(-3deg);
-	left: 61.8271vw;
+	left: 91.3271vw;
 	top: 85.6481vh;
 	position: absolute;
 	overflow: visible;
@@ -66,12 +66,12 @@
 	font-style: normal;
 	font-weight: bold;
 	font-size: 1.8229vw;
-	color: rgba(255,255,255,1);
+	color: rgba(44,44,44,1);
 }
 
 #hours {
 	transform: rotate(-3deg);
-	left: 64.0583vw;
+	left: 93.5583vw;
 	top: 89.537vh;
 	position: absolute;
 	overflow: visible;
@@ -82,14 +82,14 @@
 	font-style: normal;
 	font-weight: bold;
 	font-size: 1.8229vw;
-	color: rgb(180, 180, 175);
+	color: rgb(44, 44, 44);
 }
 
 #reward {
 	position: absolute;
-	width: 23.1979vw;
-	height: 30.2593vh;
-	left: 54.8042vw;
-	top: 82.3148vh;
+	width: 0.1979vw;
+	height: 0.2593vh;
+	left: 0.8042vw;
+	top: 0.3148vh;
 	overflow: visible;
 }
