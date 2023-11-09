@@ -1,64 +1,61 @@
-const { ref } = Vue
+const { ref, computed } = Vue
 
 // Customize language for dialog menus and carousels here
 
+
+
+
 const load = Vue.createApp({
-  setup () {
-    return {
-        // Update these properties to use the shuffled images
-        CarouselText1: images[0].caption,
-        CarouselSubText1: 'Photo captured by: Luke',
-        CarouselText2: images[1].caption,
-        CarouselSubText2: 'Photo captured by: skutela12',
-        CarouselText3: images[2].caption,
-        CarouselSubText3: 'Photo captured by: gmartinez',
-        CarouselText4: images[3].caption,
-        CarouselSubText4: 'Photo captured by: Pieces',
-        CarouselText5: images[4].caption,
-        CarouselSubText5: 'Photo captured by: Luke',
-
-      DownloadTitle: 'Initializing Real Roleplay',
-      DownloadDesc: "Hold tight while we begin downloading all the resources/assets required to play on Real Roleplay. \n\nIf you require any suppot please join our discord! discord.gg/ugyn8TpUjv",
-
-      SettingsTitle: 'Settings',
-      AudioTrackDesc1: 'When disabled the current audio-track playing will be stopped.',
-      AutoPlayDesc2: 'When disabled carousel images will stop cycling and remain on the last shown.',
-      PlayVideoDesc3: 'When disabled video will stop playing and remain paused.',
-
-      KeybindTitle: 'Default Keybinds',
-      Keybind1: 'Open Inventory',
-      Keybind2: 'Cycle Proximity',
-      Keybind3: 'Open Phone',
-      Keybind4: 'Toggle Seat Belt',
-      Keybind5: 'Open Target Menu',
-      Keybind6: 'Radial Menu',
-      Keybind7: 'Open Hud Menu',
-      Keybind8: 'Talk Over Radio',
-      Keybind9: 'Open Scoreboard',
-      Keybind10: 'Vehicle Locks',
-      Keybind11: 'Toggle Engine',
-      Keybind12: 'Pointer Emote',
-      Keybind13: 'Keybind Slots',
-      Keybind14: 'Hands Up Emote',
-      Keybind15: 'Use Item Slots',
-      Keybind16: 'Cruise Control',
-
-      firstap: ref(true),
-      secondap: ref(true),
-      thirdap: ref(true),
-      firstslide: ref(1),
-      secondslide: ref('1'),
-      thirdslide: ref('5'),
-      audioplay: ref(true),
-      playvideo: ref(true),
-      download: ref(true),
-      settings: ref(false),
-    }
-  }
-})
-
-load.use(Quasar, { config: {} })
-load.mount('#loading-main')
+    setup() {
+      const carouselItems = [
+        {
+          text: 'Want to join our discord? discord.gg/Mw8ss32p3r',
+          subText: 'Photo captured by: Luke',
+        },
+        {
+          text: 'Struggling to start? either do /guidebook or check your inventory with Button "TAB"',
+          subText: 'Photo captured by: skutela12',
+        },
+        {
+          text: 'Want a place to call home? look no further!',
+          subText: 'Photo captured by: gmartinez',
+        },
+        {
+          text: 'We are always looking for people to join our Whitelisted Jobs!',
+          subText: 'Photo captured by: Pieces',
+        },
+        {
+          text: 'Please check the server rules through our discord before playing! discord.gg/Mw8ss32p3r',
+          subText: 'Photo captured by: Luke',
+        },
+      ];
+  
+      const randomIndex = ref(0);
+  
+      const randomCarouselItem = computed(() => {
+        const index = randomIndex.value;
+        return carouselItems[index];
+      });
+  
+      // Function to select a random carousel item
+      function selectRandomItem() {
+        randomIndex.value = Math.floor(Math.random() * carouselItems.length);
+      }
+  
+      // Call selectRandomItem initially and set it to change periodically (e.g., every 5 seconds)
+      selectRandomItem();
+      setInterval(selectRandomItem, 5000); // Change every 5 seconds
+  
+      return {
+        randomCarouselItem,
+        // Other data properties remain the same
+      };
+    },
+  });
+  
+  load.use(Quasar, { config: {} });
+  load.mount('#loading-main');
+  
 
 var audio = document.getElementById("audio");
 
@@ -80,33 +77,6 @@ function audiotoggle() {
 // Your existing Vue.js setup and other code
 
 
-  // Shuffle Images
-const images = [
-    {
-      src: 'image1.jpg',
-      caption: 'Caption 1',
-    },
-    {
-      src: 'image2.jpg',
-      caption: 'Caption 2',
-    },
-    {
-      src: 'image3.jpg',
-      caption: 'Caption 3',
-    },
-    // Add more images and captions here
-  ];
-
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  }  
-
-  shuffleArray(images);
-
-  // Shuffle Songs
 const songs = [
     '/assets/audio/song1.mp3',
     '/assets/audio/song2.mp3',
