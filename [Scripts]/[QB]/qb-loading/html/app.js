@@ -1,61 +1,63 @@
-const { ref, computed } = Vue
+const { ref } = Vue
 
 // Customize language for dialog menus and carousels here
 
-
-
-
 const load = Vue.createApp({
-    setup() {
-      const carouselItems = [
-        {
-          text: 'Want to join our discord? discord.gg/Mw8ss32p3r',
-          subText: 'Photo captured by: Luke',
-        },
-        {
-          text: 'Struggling to start? either do /guidebook or check your inventory with Button "TAB"',
-          subText: 'Photo captured by: skutela12',
-        },
-        {
-          text: 'Want a place to call home? look no further!',
-          subText: 'Photo captured by: gmartinez',
-        },
-        {
-          text: 'We are always looking for people to join our Whitelisted Jobs!',
-          subText: 'Photo captured by: Pieces',
-        },
-        {
-          text: 'Please check the server rules through our discord before playing! discord.gg/Mw8ss32p3r',
-          subText: 'Photo captured by: Luke',
-        },
-      ];
-  
-      const randomIndex = ref(0);
-  
-      const randomCarouselItem = computed(() => {
-        const index = randomIndex.value;
-        return carouselItems[index];
-      });
-  
-      // Function to select a random carousel item
-      function selectRandomItem() {
-        randomIndex.value = Math.floor(Math.random() * carouselItems.length);
-      }
-  
-      // Call selectRandomItem initially and set it to change periodically (e.g., every 5 seconds)
-      selectRandomItem();
-      setInterval(selectRandomItem, 5000); // Change every 5 seconds
-  
-      return {
-        randomCarouselItem,
-        // Other data properties remain the same
-      };
-    },
-  });
-  
-  load.use(Quasar, { config: {} });
-  load.mount('#loading-main');
-  
+  setup () {
+    return {
+      CarouselText1: 'Want to join our discord? discord.gg/Mw8ss32p3r',
+      CarouselSubText1: 'Photo captured by: Luke',
+      CarouselText2: 'Struggling to start? either do /guidebook or check your inventory with Button "TAB"',
+      CarouselSubText2: 'Photo captured by: skutela12',
+      CarouselText3: 'Want a place to call home? look no further!',
+      CarouselSubText3: 'Photo captured by: gmartinez',
+      CarouselText4: 'We are always looking for people to join our Whitelisted Jobs!',
+      CarouselSubText4: 'Photo captured by: Pieces',
+      CarouselText5: 'Please check the server rules through our discord before playing! discord.gg/Mw8ss32p3r',
+      CarouselSubText5: 'Photo captured by: Luke',
+
+      DownloadTitle: 'Initializing Real Roleplay',
+      DownloadDesc: "Hold tight while we begin downloading all the resources/assets required to play on Real Roleplay. \n\nIf you require any suppot please join our discord! discord.gg/ugyn8TpUjv",
+
+      SettingsTitle: 'Settings',
+      AudioTrackDesc1: 'When disabled the current audio-track playing will be stopped.',
+      AutoPlayDesc2: 'When disabled carousel images will stop cycling and remain on the last shown.',
+      PlayVideoDesc3: 'When disabled video will stop playing and remain paused.',
+
+      KeybindTitle: 'Default Keybinds',
+      Keybind1: 'Open Inventory',
+      Keybind2: 'Cycle Proximity',
+      Keybind3: 'Open Phone',
+      Keybind4: 'Toggle Seat Belt',
+      Keybind5: 'Open Target Menu',
+      Keybind6: 'Radial Menu',
+      Keybind7: 'Open Hud Menu',
+      Keybind8: 'Talk Over Radio',
+      Keybind9: 'Open Scoreboard',
+      Keybind10: 'Vehicle Locks',
+      Keybind11: 'Toggle Engine',
+      Keybind12: 'Pointer Emote',
+      Keybind13: 'Keybind Slots',
+      Keybind14: 'Hands Up Emote',
+      Keybind15: 'Use Item Slots',
+      Keybind16: 'Cruise Control',
+
+      firstap: ref(true),
+      secondap: ref(true),
+      thirdap: ref(true),
+      firstslide: ref(1),
+      secondslide: ref('1'),
+      thirdslide: ref('5'),
+      audioplay: ref(true),
+      playvideo: ref(true),
+      download: ref(true),
+      settings: ref(false),
+    }
+  }
+})
+
+load.use(Quasar, { config: {} })
+load.mount('#loading-main')
 
 var audio = document.getElementById("audio");
 
