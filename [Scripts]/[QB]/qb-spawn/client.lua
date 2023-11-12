@@ -154,15 +154,6 @@ RegisterNUICallback('spawnplayer', function(data)
             SetEntityHeading(PlayerPedId(), PlayerData.position.a)
             FreezeEntityPosition(PlayerPedId(), false)
         end)
-        print(insideMeta.apartment.apartmentType)
-        if insideMeta.house ~= nil then
-            local houseId = insideMeta.house
-            TriggerEvent('qb-houses:client:LastLocationHouse', houseId)
-        elseif insideMeta.apartment.apartmentType ~= nil or insideMeta.apartment.apartmentId ~= nil then
-            local apartmentType = insideMeta.apartment.apartmentType
-            local apartmentId = insideMeta.apartment.apartmentId
-            TriggerEvent('qb-apartments:client:LastLocationHouse', apartmentType, apartmentId)
-        end
         TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
         TriggerEvent('QBCore:Client:OnPlayerLoaded')
         FreezeEntityPosition(ped, false)
@@ -178,11 +169,8 @@ RegisterNUICallback('spawnplayer', function(data)
         SetDisplay(false)
         DoScreenFadeOut(500)
         Citizen.Wait(2000)
-        TriggerEvent('qb-houses:client:enterOwnedHouse', location)
         TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
         TriggerEvent('QBCore:Client:OnPlayerLoaded')
-        TriggerServerEvent('qb-houses:server:SetInsideMeta', 0, false)
-        TriggerServerEvent('qb-apartments:server:SetInsideMeta', 0, 0, false)
         FreezeEntityPosition(ped, false)
         RenderScriptCams(false, true, 500, true, true)
         SetCamActive(cam, false)
@@ -202,8 +190,6 @@ RegisterNUICallback('spawnplayer', function(data)
         SetEntityCoords(ped, pos.x, pos.y, pos.z)
         TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
         TriggerEvent('QBCore:Client:OnPlayerLoaded')
-        TriggerServerEvent('qb-houses:server:SetInsideMeta', 0, false)
-        TriggerServerEvent('qb-apartments:server:SetInsideMeta', 0, 0, false)
         Citizen.Wait(500)
         SetEntityCoords(ped, pos.x, pos.y, pos.z)
         SetEntityHeading(ped, pos.h)
@@ -240,10 +226,6 @@ Citizen.CreateThread(function()
     end
 end)
 
-RegisterNetEvent('qb-houses:client:setHouseConfig')
-AddEventHandler('qb-houses:client:setHouseConfig', function(houseConfig)
-    Config.Houses = houseConfig
-end)
 
 RegisterNetEvent('qb-spawn:client:setupSpawns')
 AddEventHandler('qb-spawn:client:setupSpawns', function(cData, new, apps)
