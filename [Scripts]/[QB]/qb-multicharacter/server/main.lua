@@ -92,20 +92,10 @@ RegisterNetEvent('qb-multicharacter:server:loadUserData', function(cData)
         repeat
             Wait(10)
         until hasDonePreloading[src]
-        print('^2[qb-core]^7 '..GetPlayerName(src)..' (Citizen ID: '..cData.citizenid..') has successfully loaded!')
+        print('^2[qb-core]^7 '..GetPlayerName(src)..' (Citizen ID: '..cData.citizenid..') has succesfully loaded!')
         QBCore.Commands.Refresh(src)
         loadHouseData(src)
-        if Config.SkipSelection then
-            local coords = json.decode(cData.position)
-            TriggerClientEvent('qb-multicharacter:client:spawnLastLocation', src, coords, cData)
-        else
-            if GetResourceState('qb-apartments') == 'started' then
-                TriggerClientEvent('apartments:client:setupSpawnUI', src, cData)
-            else
-                TriggerClientEvent('qb-spawn:client:setupSpawns', src, cData, false, nil)
-                TriggerClientEvent('qb-spawn:client:openUI', src, true)
-            end
-        end
+        TriggerClientEvent('apartments:client:setupSpawnUI', src, cData)
         TriggerEvent("qb-log:server:CreateLog", "joinleave", "Loaded", "green", "**".. GetPlayerName(src) .. "** (<@"..(QBCore.Functions.GetIdentifier(src, 'discord'):gsub("discord:", "") or "unknown").."> |  ||"  ..(QBCore.Functions.GetIdentifier(src, 'ip') or 'undefined') ..  "|| | " ..(QBCore.Functions.GetIdentifier(src, 'license') or 'undefined') .." | " ..cData.citizenid.." | "..src..") loaded..")
     end
 end)
@@ -119,17 +109,17 @@ RegisterNetEvent('qb-multicharacter:server:createCharacter', function(data)
         repeat
             Wait(10)
         until hasDonePreloading[src]
-        if GetResourceState('qb-apartments') == 'started' and Apartments.Starting then
+        if data.isNew then
             local randbucket = (GetPlayerPed(src) .. math.random(1,999))
             SetPlayerRoutingBucket(src, randbucket)
-            print('^2[qb-core]^7 '..GetPlayerName(src)..' has successfully loaded!')
+            print('^2[qb-core]^7 '..GetPlayerName(src)..' has succesfully loaded!')
             QBCore.Commands.Refresh(src)
             loadHouseData(src)
             TriggerClientEvent("qb-multicharacter:client:closeNUI", src)
             TriggerClientEvent('apartments:client:setupSpawnUI', src, newData)
             GiveStarterItems(src)
         else
-            print('^2[qb-core]^7 '..GetPlayerName(src)..' has successfully loaded!')
+            print('^2[qb-core]^7 '..GetPlayerName(src)..' has succesfully loaded!')
             QBCore.Commands.Refresh(src)
             loadHouseData(src)
             TriggerClientEvent("qb-multicharacter:client:closeNUIdefault", src)
@@ -198,7 +188,7 @@ end)
 QBCore.Functions.CreateCallback("qb-multicharacter:server:getSkin", function(_, cb, cid)
     local result = MySQL.query.await('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', {cid, 1})
     if result[1] ~= nil then
-        cb(result[1].model, result[1].skin)
+        cb(json.decode(result[1].skin))
     else
         cb(nil)
     end

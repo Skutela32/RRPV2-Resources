@@ -1,4 +1,4 @@
-# qb-spawn
+# Omi-spawn
 Spawn Selector for QB-Core Framework :eagle:
 
 # License
@@ -35,11 +35,12 @@ Spawn Selector for QB-Core Framework :eagle:
 ## Installation
 ### Manual
 - Download the script and put it in the `[qb]` directory.
+- Import `Omi-spawn.sql` in your database
 - Add the following code to your server.cfg/resouces.cfg
 ```
 ensure qb-core
-ensure qb-spawn
-ensure qb-apartments
+ensure Omi-spawn
+ensure qb-apartmen
 ensure qb-garages
 ```
 
@@ -48,12 +49,22 @@ An example to add spawn option
 ```
 QB.Spawns = {
     ["spawn1"] = { -- Needs to be unique
-        coords = vector4(1.1, -1.1, 1.1, 180.0), -- Coords player will be spawned
+        coords = {
+            x = 0.0, -- Coords player will be spawned
+            y = 0.0, 
+            z = 0.0, 
+            h = 180.0
+        },
         location = "spawn1", -- Needs to be unique
         label = "Spawn 1 Name", -- This is the label which will show up in selection menu.
     },
     ["spawn2"] = { -- Needs to be unique
-        coords = vector4(1.1, -1.1, 1.1, 180.0), -- Coords player will be spawned
+        coords = {
+            x = 1.1, -- Coords player will be spawned
+            y = -1.1, 
+            z = 1.1, 
+            h = 180.0 
+        }, 
         location = "spawn2", -- Needs to be unique
         label = "Spawn 2 Name", -- This is the label which will show up in selection menu.
     },
