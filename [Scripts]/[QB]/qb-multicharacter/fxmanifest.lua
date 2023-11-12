@@ -1,8 +1,8 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-Multicharacter'
-version '1.2.0'
+description 'QB-Multicharacter Diseñit wapo de Macro'
+version '2.0.0'
 
 shared_scripts {
     '@qb-core/shared/locale.lua',
@@ -10,11 +10,7 @@ shared_scripts {
     'locales/*.lua',
     'config.lua'
 }
-
-client_scripts {
-    'client/main.lua'
-}
-
+client_script 'client/main.lua'
 server_scripts  {
     '@oxmysql/lib/MySQL.lua',
     'server/main.lua'
@@ -26,9 +22,11 @@ files {
     'html/index.html',
     'html/style.css',
     'html/reset.css',
-    'html/vue.js',
-    'html/swal2.js',
-    'html/profanity.js'
+    'html/profanity.js',
+    'html/script.js',
+    'html/musica.mp3',
+    'html/click.wav',
+    'html/qb-pixel.png',
 }
 
 dependencies {

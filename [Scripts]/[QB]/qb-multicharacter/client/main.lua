@@ -79,7 +79,7 @@ RegisterNetEvent('qb-multicharacter:client:closeNUIdefault', function() -- This 
     Wait(500)
     DoScreenFadeIn(250)
     TriggerEvent('qb-weathersync:client:EnableSync')
-    TriggerEvent('qb-clothes:client:CreateFirstCharacter')
+    TriggerEvent('illenium-appearance:client:CreateFirstCharacter')
 end)
 
 RegisterNetEvent('qb-multicharacter:client:closeNUI', function()
@@ -108,6 +108,9 @@ end)
 
 RegisterNUICallback('closeUI', function(_, cb)
     openCharMenu(false)
+    SendNUIMessage({
+        action = "stopMusic"
+    })
     cb("ok")
 end)
 
@@ -121,8 +124,12 @@ end)
 RegisterNUICallback('selectCharacter', function(data, cb)
     local cData = data.cData
     DoScreenFadeOut(10)
+    cData.isNew = false
     TriggerServerEvent('qb-multicharacter:server:loadUserData', cData)
     openCharMenu(false)
+    SendNUIMessage({
+        action = "stopMusic"
+    })
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
     cb("ok")
@@ -134,14 +141,36 @@ RegisterNUICallback('cDataPed', function(nData, cb)
     DeleteEntity(charPed)
     if cData ~= nil then
         QBCore.Functions.TriggerCallback('qb-multicharacter:server:getSkin', function(skinData)
-            if skinData then
-                local model = joaat(skinData.model)
+           if skinData then
+                local model = skinData.model
                 CreateThread(function()
-                    RequestModel(model)
-                    while not HasModelLoaded(model) do
-                        Wait(0)
+                    RequestModel(GetHashKey(model))
+                    while not HasModelLoaded(GetHashKey(model)) do
+                        Wait(10)
                     end
                     charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
+                    local RandomAnims = {
+                        "WORLD_HUMAN_HANG_OUT_STREET", 
+                        "WORLD HUMAN STAND IMPATIENT", 
+                        "WORLD_HUMAN_STAND_MOBILE", 
+                        "WORLD_HUMAN_SMOKING_POT", 
+                        "WORLD_HUMAN_LEANING", 
+                        "WORLD_HUMAN_DRUG DEALER_HARD", 
+                        "WORLD_HUMAN_SUPERHERO", 
+                        "WORLD_HUMAN_TOURIST_MAP", 
+                        "WORLD_HUMAN YOGA", 
+                        "WORLD_HUMAN_BINOCULARS", 
+                        "WORLD HUMAN BUM WASH", 
+                        "WORLD_HUMAN_CONST_DRILL", 
+                        "WORLD_HUMAN_MOBILE_FILM_SHOCKING", 
+                        "WORLD HUMAN MUSCLE FLEX", 
+                        "WORLD_HUMAN_MUSICIAN", 
+                        "WORLD_HUMAN_PAPARAZZI", 
+                        "WORLD_HUMAN_PARTYING",
+                    }
+                    local PlayAnim = RandomAnims[math.random(#RandomAnims)] 
+                    SetPedCanPlayAmbientAnims(charPed, true) 
+                    TaskStartScenarioInPlace(charPed, PlayAnim, 0, true)
                     SetPedComponentVariation(charPed, 0, 0, 0, 2)
                     FreezeEntityPosition(charPed, false)
                     SetEntityInvincible(charPed, true)
@@ -155,7 +184,7 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                         "mp_m_freemode_01",
                         "mp_f_freemode_01",
                     }
-                    model = joaat(randommodels[math.random(1, #randommodels)])
+                    local model = GetHashKey(randommodels[math.random(1, #randommodels)])
                     RequestModel(model)
                     while not HasModelLoaded(model) do
                         Wait(0)
@@ -176,7 +205,7 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                 "mp_m_freemode_01",
                 "mp_f_freemode_01",
             }
-            local model = joaat(randommodels[math.random(1, #randommodels)])
+            local model = GetHashKey(randommodels[math.random(1, #randommodels)])
             RequestModel(model)
             while not HasModelLoaded(model) do
                 Wait(0)
@@ -215,7 +244,11 @@ RegisterNUICallback('createNewCharacter', function(data, cb)
     elseif cData.gender == Lang:t("ui.female") then
         cData.gender = 1
     end
+    cData.isNew = true
     TriggerServerEvent('qb-multicharacter:server:createCharacter', cData)
+    SendNUIMessage({
+        action = "stopMusic"
+    })
     Wait(500)
     cb("ok")
 end)
