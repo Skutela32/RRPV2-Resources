@@ -12,7 +12,7 @@ Config.SelectFirstChar = true -- it will select first possible player character 
 Config.UseCustomSkinCreator = true -- if you use qb-clothing for character creator set it to false, if you use custom character creator set it to true and change in @vms_multichars/config/config_client.lua function openCharacterCreator(skin)
 Config.RelogCommand = false -- @vms_multichars/config/config_client.lua:60
 
-Config.UseCustomSpawnSelector = false -- @vms_multichars/config/config_server.lua function openSpawnSelector()
+Config.UseCustomSpawnSelector = true -- @vms_multichars/config/config_server.lua function openSpawnSelector()
 Config.SkipSpawnSelector = false -- Skip the spawn selection and spawns the player at the last location.
 
 Config.ToLeft = vector3(912.74, 0.01, 110.28) -- This coords is on the Diamond Casino, if you didnt have build with this, its not works, you need to change the coords
