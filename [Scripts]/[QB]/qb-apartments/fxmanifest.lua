@@ -25,7 +25,8 @@ client_scripts {
 
 dependencies {
     'qb-core',
-    'qb-interior'
+    'qb-interior',
+    'qb-weathersync',
 }
 
 lua54 'yes'

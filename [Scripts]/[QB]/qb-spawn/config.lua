@@ -35,7 +35,7 @@ QB.Spawns = {
 }
 
 QB.SpawnAccess = { --To disable the buttons
-    ['apartments'] = false,
+    ['apartments'] = true,
     ['houses'] = true,
     ['lastLoc'] = true,
 }
