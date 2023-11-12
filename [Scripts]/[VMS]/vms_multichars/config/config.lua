@@ -23,7 +23,7 @@ Config.CameraZHeight = 1.5 -- + 1.5
 Config.SpawnLocation = vector3(-491.64, -693.84, 33.21) -- here you can set the coordinates in which the player will spawn after creating a character ! IMPORTANT, if you use Config.UseCustomSkinCreator, it won't work, you need to set in charcreator e.g. vms_charcreator !
 
 Config.ChangeCharacterPoint = {
-	enable = true,
+	enable = false,
 	coords = vector3(-1045.07, -2750.11, 21.36),
 	marker = {
 		id = 2,

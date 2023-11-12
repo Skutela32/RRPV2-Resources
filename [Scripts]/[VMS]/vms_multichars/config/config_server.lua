@@ -15,7 +15,7 @@ Config.StarterMoney = {
 
 openSpawnSelector = function(src, cData)
     if Config.UseCustomSpawnSelector then
-        TriggerClientEvent('qb-spawn:client:openUI', src)
+        TriggerClientEvent('rrp-spawn:client:openUI', src)
     else
         TriggerClientEvent('apartments:client:setupSpawnUI', src, cData)
     end
