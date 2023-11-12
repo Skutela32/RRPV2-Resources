@@ -222,7 +222,7 @@ Locales["en"] = {
             }
         },
         update = {
-            title = "Update Outfit",
+            title = "Update Outfit [Cannot be undone]",
             description = "Save your current clothing to an existing outfit",
             failure = {
                 title = "Update Failed",
@@ -273,7 +273,7 @@ Locales["en"] = {
         surgeonShopTitle = "Surgeon Shop"
     },
     clothing = {
-        title = "Buy Clothing - $%d",
+        title = "Buy Clothing - £%d",
         titleNoPrice = "Change Clothing",
         options = {
             title = "👔 | Clothing Store Options",
@@ -320,10 +320,10 @@ Locales["en"] = {
         }
     },
     textUI = {
-        clothing = "Clothing Store - Price: $%d",
-        barber = "Barber - Price: $%d",
-        tattoo = "Tattoo Shop - Price: $%d",
-        surgeon = "Plastic Surgeon - Price: $%d",
+        clothing = "Clothing Store - Price: £%d",
+        barber = "Barber - Price: £%d",
+        tattoo = "Tattoo Shop - Price: £%d",
+        surgeon = "Plastic Surgeon - Price: £%d",
         clothingRoom = "Clothing Room",
         playerOutfitRoom = "Outfits"
     },
@@ -346,7 +346,7 @@ Locales["en"] = {
         tattoo = {
             success = {
                 title = "Success",
-                description = "Purchased %s tattoo for %s$"
+                description = "Purchased %s tattoo for %s£"
             },
             failure = {
                 title = "Tattoo apply failed",
@@ -356,7 +356,7 @@ Locales["en"] = {
         store = {
             success = {
                 title = "Success",
-                description = "Gave $%s to %s!"
+                description = "Gave £%s to %s!"
             },
             failure = {
                 title = "Exploit!",
